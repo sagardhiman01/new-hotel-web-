@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery Management | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">Photo Gallery Showcase</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Curate high-definition imagery featured in the guest visual portfolio.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-adm-gold btn-adm-sm" onclick="openGalleryModal()">
+                    + Add New Photo
+                </button>
+            </div>
+
+            <div id="galleryGrid" class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:1.5rem;">
+                <!-- Populated dynamically -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+        <div style="background:var(--adm-surface);border:1px solid var(--adm-border-gold);border-radius:12px;width:100%;max-width:500px;padding:2rem;box-shadow:0 25px 60px rgba(0,0,0,0.8);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;border-bottom:1px solid var(--adm-border);padding-bottom:1rem;">
+                <h3 class="font-heading" style="color:var(--adm-gold);font-size:1.2rem;">Add Photo to Gallery</h3>
+                <button type="button" onclick="closeGalleryModal()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+            </div>
+
+            <form id="galleryForm">
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Photo Title *</label>
+                    <input type="text" id="gal_title" class="form-control" required placeholder="e.g. Grand Facade at Night">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Category</label>
+                    <select id="gal_category" class="form-control">
+                        <option value="Exterior">Exterior & Facade</option>
+                        <option value="Rooms">Rooms & Suites</option>
+                        <option value="Banquet">Banquet & Weddings</option>
+                        <option value="Rooftop">Rooftop Sky Lounge</option>
+                        <option value="Pool">Pool Party Zone</option>
+                        <option value="Dining">Fine Dining</option>
+                        <option value="Events">Conference & Meetings</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <label class="form-label">Image URL / Path *</label>
+                    <input type="text" id="gal_image" class="form-control" required placeholder="assets/images/facade.jpg">
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                    <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="closeGalleryModal()">Cancel</button>
+                    <button type="submit" class="btn btn-adm-gold btn-adm-sm">Add Photo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('gallery', 'Photo Gallery Management');
+            renderGallery();
+
+            document.getElementById('galleryForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                savePhoto();
+            });
+        });
+
+        function renderGallery() {
+            const gallery = HotelStore.getGallery();
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+
+            gallery.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'admin-card';
+                card.style.cssText = 'padding:1rem;display:flex;flex-direction:column;';
+
+                card.innerHTML = `
+                    <div style="position:relative;height:170px;border-radius:8px;overflow:hidden;margin-bottom:0.75rem;">
+                        <img src="../${item.image_url || 'assets/images/facade.jpg'}" alt="" style="width:100%;height:100%;object-fit:cover;">
+                        <span class="status-badge badge-confirmed" style="position:absolute;top:0.5rem;left:0.5rem;">${item.category}</span>
+                    </div>
+                    <strong style="color:#fff;font-size:0.9rem;margin-bottom:0.5rem;">${item.title}</strong>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;border-top:1px solid var(--adm-border);padding-top:0.5rem;">
+                        <span style="font-size:0.75rem;color:var(--adm-text-dim);">${item.image_url}</span>
+                        <button class="btn btn-adm-danger btn-adm-sm" onclick="deletePhoto(${item.id})">Delete</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openGalleryModal() {
+            document.getElementById('galleryForm').reset();
+            document.getElementById('galleryModal').style.display = 'flex';
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        function deletePhoto(id) {
+            if (confirm('Delete this photo from gallery?')) {
+                HotelStore.deleteGalleryItem(id);
+                showAdminToast('Photo removed from gallery');
+                renderGallery();
+            }
+        }
+
+        function savePhoto() {
+            const item = {
+                title: document.getElementById('gal_title').value.trim(),
+                category: document.getElementById('gal_category').value,
+                image_url: document.getElementById('gal_image').value.trim()
+            };
+
+            HotelStore.saveGalleryItem(item);
+            showAdminToast('Photo added to gallery!');
+            closeGalleryModal();
+            renderGallery();
+        }
+    </script>
+</body>
+</html>

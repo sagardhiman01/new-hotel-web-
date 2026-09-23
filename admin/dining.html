@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Lounge & Dining Management | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">Sky Lounge & Restaurant Menu</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Curate gourmet appetizers, royal mains, and signature rooftop elixirs.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-adm-gold btn-adm-sm" onclick="openDishModal()">
+                    + Add New Menu Item
+                </button>
+            </div>
+
+            <!-- Categories Container -->
+            <div id="diningCategoriesContainer" style="display:flex;flex-direction:column;gap:2rem;">
+                <!-- Populated dynamically -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Dish Modal -->
+    <div id="dishModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+        <div style="background:var(--adm-surface);border:1px solid var(--adm-border-gold);border-radius:12px;width:100%;max-width:550px;padding:2rem;box-shadow:0 25px 60px rgba(0,0,0,0.8);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;border-bottom:1px solid var(--adm-border);padding-bottom:1rem;">
+                <h3 class="font-heading" id="dishModalTitle" style="color:var(--adm-gold);font-size:1.2rem;">Add Menu Item</h3>
+                <button type="button" onclick="closeDishModal()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+            </div>
+
+            <form id="dishForm">
+                <input type="hidden" id="dish_id">
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Dish / Elixir Name *</label>
+                    <input type="text" id="dish_name" class="form-control" required placeholder="e.g. Awadhi Dum Biryani">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Menu Category *</label>
+                        <select id="dish_category" class="form-control">
+                            <option value="Signature Starters">Signature Starters</option>
+                            <option value="Royal Main Course">Royal Main Course</option>
+                            <option value="Sky Lounge Elixirs & Mocktails">Sky Lounge Elixirs & Mocktails</option>
+                            <option value="Artisanal Desserts">Artisanal Desserts</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Price (₹) *</label>
+                        <input type="number" id="dish_price" class="form-control" required placeholder="495">
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Dietary Preference</label>
+                        <select id="dish_dietary" class="form-control">
+                            <option value="veg">Vegetarian (🌱 Veg)</option>
+                            <option value="non-veg">Non-Vegetarian (🍗 Non-Veg)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Chef's Special Tag?</label>
+                        <select id="dish_special" class="form-control">
+                            <option value="true">Yes (Special Badge)</option>
+                            <option value="false">Standard Item</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <label class="form-label">Description & Ingredients</label>
+                    <textarea id="dish_desc" class="form-control" rows="3" placeholder="Crafted with aromatic spices..."></textarea>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                    <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="closeDishModal()">Cancel</button>
+                    <button type="submit" class="btn btn-adm-gold btn-adm-sm">Save Menu Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('dining', 'Sky Lounge & Dining Menu');
+            renderMenu();
+
+            document.getElementById('dishForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                saveDishData();
+            });
+        });
+
+        function renderMenu() {
+            const dining = HotelStore.getDining();
+            const container = document.getElementById('diningCategoriesContainer');
+            container.innerHTML = '';
+
+            dining.forEach(cat => {
+                const card = document.createElement('div');
+                card.className = 'admin-card';
+
+                let itemsHtml = '';
+                if (!cat.items || cat.items.length === 0) {
+                    itemsHtml = '<div style="color:var(--adm-text-muted);font-size:0.85rem;padding:1rem;">No items in this category yet.</div>';
+                } else {
+                    cat.items.forEach(item => {
+                        const dietaryBadge = item.dietary === 'veg' ? '<span style="color:#10b981;font-size:0.75rem;">🌱 Veg</span>' : '<span style="color:#ef4444;font-size:0.75rem;">🍗 Non-Veg</span>';
+                        const specialBadge = item.is_special ? '<span class="status-badge badge-confirmed" style="font-size:0.7rem;">Chef Signature</span>' : '';
+
+                        itemsHtml += `
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;border-bottom:1px solid var(--adm-border);gap:1rem;flex-wrap:wrap;">
+                                <div style="flex:1;min-width:240px;">
+                                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                                        <strong style="color:#fff;font-size:1rem;">${item.name}</strong>
+                                        ${dietaryBadge}
+                                        ${specialBadge}
+                                    </div>
+                                    <p style="font-size:0.8rem;color:var(--adm-text-muted);margin-top:0.25rem;">${item.desc || ''}</p>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:1.5rem;">
+                                    <span class="font-heading text-gold" style="font-size:1.1rem;font-weight:700;color:var(--adm-gold);">${formatINR(item.price)}</span>
+                                    <div style="display:flex;gap:0.5rem;">
+                                        <button class="btn btn-adm-secondary btn-adm-sm" onclick='editDish(${JSON.stringify(cat.category)}, ${JSON.stringify(item)})'>Edit</button>
+                                        <button class="btn btn-adm-danger btn-adm-sm" onclick="deleteDish(${item.id})">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                card.innerHTML = `
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;border-bottom:1px solid var(--adm-border-gold);padding-bottom:0.75rem;">
+                        <h3 class="font-heading" style="color:var(--adm-gold);font-size:1.15rem;">${cat.category}</h3>
+                        <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="openDishModal('${cat.category}')">+ Add to ${cat.category}</button>
+                    </div>
+                    <div>${itemsHtml}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openDishModal(category = 'Signature Starters', item = null) {
+            document.getElementById('dishModalTitle').textContent = item ? 'Edit Menu Item' : 'Add New Menu Item';
+            document.getElementById('dish_id').value = item ? item.id : '';
+            document.getElementById('dish_name').value = item ? item.name : '';
+            document.getElementById('dish_category').value = category;
+            document.getElementById('dish_price').value = item ? item.price : '';
+            document.getElementById('dish_dietary').value = item ? item.dietary : 'veg';
+            document.getElementById('dish_special').value = item ? String(item.is_special) : 'true';
+            document.getElementById('dish_desc').value = item ? (item.desc || '') : '';
+            document.getElementById('dishModal').style.display = 'flex';
+        }
+
+        function closeDishModal() {
+            document.getElementById('dishModal').style.display = 'none';
+        }
+
+        function editDish(category, item) {
+            openDishModal(category, item);
+        }
+
+        function deleteDish(id) {
+            if (confirm('Delete this menu dish?')) {
+                HotelStore.deleteDish(id);
+                showAdminToast('Dish removed from menu');
+                renderMenu();
+            }
+        }
+
+        function saveDishData() {
+            const cat = document.getElementById('dish_category').value;
+            const dish = {
+                name: document.getElementById('dish_name').value.trim(),
+                price: Number(document.getElementById('dish_price').value),
+                dietary: document.getElementById('dish_dietary').value,
+                is_special: document.getElementById('dish_special').value === 'true',
+                desc: document.getElementById('dish_desc').value.trim()
+            };
+            const id = document.getElementById('dish_id').value;
+            if (id) dish.id = Number(id);
+
+            HotelStore.saveDish(cat, dish);
+            showAdminToast('Menu dish saved successfully!');
+            closeDishModal();
+            renderMenu();
+        }
+    </script>
+</body>
+</html>

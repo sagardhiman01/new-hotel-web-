@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities Management | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">Hotel World-Class Amenities</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Manage core facilities featured on homepage and amenities showcases.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-adm-gold btn-adm-sm" onclick="openAmenityModal()">
+                    + Add New Amenity
+                </button>
+            </div>
+
+            <div id="amenitiesContainer" class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:1.5rem;">
+                <!-- Populated dynamically -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Amenity Modal -->
+    <div id="amenityModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+        <div style="background:var(--adm-surface);border:1px solid var(--adm-border-gold);border-radius:12px;width:100%;max-width:550px;padding:2rem;box-shadow:0 25px 60px rgba(0,0,0,0.8);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;border-bottom:1px solid var(--adm-border);padding-bottom:1rem;">
+                <h3 class="font-heading" id="amenityModalTitle" style="color:var(--adm-gold);font-size:1.2rem;">Add Amenity</h3>
+                <button type="button" onclick="closeAmenityModal()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+            </div>
+
+            <form id="amenityForm">
+                <input type="hidden" id="amenity_id">
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Amenity Title *</label>
+                    <input type="text" id="amenity_title" class="form-control" required placeholder="e.g. Open Rooftop Sky Lounge">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 2fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Icon Emoji</label>
+                        <input type="text" id="amenity_icon" class="form-control" placeholder="🍸">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" id="amenity_image" class="form-control" placeholder="assets/images/rooftop.jpg">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <label class="form-label">Description</label>
+                    <textarea id="amenity_desc" class="form-control" rows="3" placeholder="Mesmerizing skyline vistas..."></textarea>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                    <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="closeAmenityModal()">Cancel</button>
+                    <button type="submit" class="btn btn-adm-gold btn-adm-sm">Save Amenity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('amenities', 'Hotel Amenities Management');
+            renderAmenities();
+
+            document.getElementById('amenityForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                saveAmenityData();
+            });
+        });
+
+        function renderAmenities() {
+            const amenities = HotelStore.getAmenities();
+            const container = document.getElementById('amenitiesContainer');
+            container.innerHTML = '';
+
+            amenities.forEach(a => {
+                const card = document.createElement('div');
+                card.className = 'admin-card';
+                card.style.cssText = 'display:flex;flex-direction:column;justify-content:space-between;';
+
+                card.innerHTML = `
+                    <div>
+                        <div style="position:relative;height:160px;margin:-1.5rem -1.5rem 1rem;overflow:hidden;border-radius:12px 12px 0 0;">
+                            <img src="../${a.image_url || 'assets/images/facade.jpg'}" alt="" style="width:100%;height:100%;object-fit:cover;">
+                            <span style="position:absolute;top:0.75rem;left:0.75rem;font-size:1.5rem;background:rgba(0,0,0,0.6);padding:0.35rem 0.6rem;border-radius:8px;">${a.icon || '✨'}</span>
+                        </div>
+                        <h3 class="font-heading" style="color:#fff;font-size:1.1rem;margin-bottom:0.35rem;">${a.title}</h3>
+                        <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.5;margin-bottom:1rem;">${a.desc || ''}</p>
+                    </div>
+                    <div style="display:flex;justify-content:flex-end;gap:0.5rem;border-top:1px solid var(--adm-border);padding-top:1rem;">
+                        <button class="btn btn-adm-secondary btn-adm-sm" onclick='editAmenity(${JSON.stringify(a)})'>Edit</button>
+                        <button class="btn btn-adm-danger btn-adm-sm" onclick="deleteAmenity(${a.id})">Delete</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openAmenityModal(amenity = null) {
+            document.getElementById('amenityModalTitle').textContent = amenity ? 'Edit Amenity' : 'Add Amenity';
+            document.getElementById('amenity_id').value = amenity ? amenity.id : '';
+            document.getElementById('amenity_title').value = amenity ? amenity.title : '';
+            document.getElementById('amenity_icon').value = amenity ? (amenity.icon || '') : '✨';
+            document.getElementById('amenity_image').value = amenity ? (amenity.image_url || '') : 'assets/images/rooftop.jpg';
+            document.getElementById('amenity_desc').value = amenity ? (amenity.desc || '') : '';
+            document.getElementById('amenityModal').style.display = 'flex';
+        }
+
+        function closeAmenityModal() {
+            document.getElementById('amenityModal').style.display = 'none';
+        }
+
+        function editAmenity(a) {
+            openAmenityModal(a);
+        }
+
+        function deleteAmenity(id) {
+            if (confirm('Delete this amenity?')) {
+                HotelStore.deleteAmenity(id);
+                showAdminToast('Amenity removed');
+                renderAmenities();
+            }
+        }
+
+        function saveAmenityData() {
+            const id = document.getElementById('amenity_id').value;
+            const data = {
+                title: document.getElementById('amenity_title').value.trim(),
+                icon: document.getElementById('amenity_icon').value.trim() || '✨',
+                image_url: document.getElementById('amenity_image').value.trim() || 'assets/images/rooftop.jpg',
+                desc: document.getElementById('amenity_desc').value.trim()
+            };
+            if (id) data.id = Number(id);
+
+            HotelStore.saveAmenity(data);
+            showAdminToast('Amenity saved!');
+            closeAmenityModal();
+            renderAmenities();
+        }
+    </script>
+</body>
+</html>

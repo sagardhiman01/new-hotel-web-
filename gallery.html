@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Portfolio & Gallery | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-badge">
+                <span class="top-bar-dot"></span>
+                <span data-bind="banner_status">OPENING SOON &bull; BOOKING OPEN NOW</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN NAV -->
+    <header class="main-header">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="brand-crest" viewBox="0 0 80 24" width="58" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 2 L43 9 L51 9 L45 14 L47 21 L40 17 L33 21 L35 14 L29 9 L37 9 Z" fill="url(#crestGoldGal)" filter="drop-shadow(0 0 3px rgba(255,200,87,0.7))"/>
+                    <path d="M28 15 C20 11, 10 18, 2 15 C8 11, 18 10, 24 13" stroke="url(#crestGoldGal)" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M52 15 C60 11, 70 18, 78 15 C72 11, 62 10, 56 13" stroke="url(#crestGoldGal)" stroke-width="1.4" stroke-linecap="round"/>
+                    <circle cx="40" cy="13" r="5.5" stroke="url(#crestGoldGal)" stroke-width="1.2" fill="#080c16"/>
+                    <text x="40" y="16" font-family="'Cinzel', serif" font-size="6.5" font-weight="700" fill="url(#crestGoldGal)" text-anchor="middle">V</text>
+                    <defs>
+                        <linearGradient id="crestGoldGal" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff5d6"/>
+                            <stop offset="50%" stop-color="#ffc857"/>
+                            <stop offset="100%" stop-color="#d48710"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-name">HOTEL VARN INN</div>
+                <div class="brand-byline" data-bind="hotel_brand">BY EPSILON • ROORKEE</div>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Suites & Sanctuaries</a>
+                <a href="dining.html" class="nav-link">Sky Lounge & Dining</a>
+                <a href="events.html" class="nav-link">Banquets & Celebrations</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link active">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button type="button" class="btn btn-gold btn-sm nav-reserve-btn" data-open-booking>Reserve A Suite</button>
+                <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section" style="min-height:55vh;">
+        <div class="hero-bg-media">
+            <img src="assets/images/facade.jpg" alt="Hotel Varn Inn Portfolio">
+        </div>
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-content">
+            <span class="section-tag">Visual Splendor</span>
+            <h1 class="hero-title">
+                The Architectural <span class="font-italic text-gold-gradient">Portfolio</span>
+            </h1>
+            <p class="hero-subtitle">
+                A curated visual tour through opulent suites, crystal-lit banquet ballrooms, sunset rooftop lounges, and azure pool parties.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section style="padding:4.5rem 0;border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <!-- Filter Pills -->
+            <div style="display:flex;justify-content:center;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+                <button type="button" class="btn btn-gold btn-sm" onclick="filterGal('All')">All Showcase</button>
+                <button type="button" class="btn btn-outline-gold btn-sm" onclick="filterGal('Rooms')">Suites</button>
+                <button type="button" class="btn btn-outline-gold btn-sm" onclick="filterGal('Banquet')">Banquets</button>
+                <button type="button" class="btn btn-outline-gold btn-sm" onclick="filterGal('Rooftop')">Sky Lounge</button>
+                <button type="button" class="btn btn-outline-gold btn-sm" onclick="filterGal('Pool')">Pool Zone</button>
+                <button type="button" class="btn btn-outline-gold btn-sm" onclick="filterGal('Dining')">Gastronomy</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Dynamically populated / fallback cards -->
+                <div class="gallery-item" data-category="Exterior" onclick="openLightbox('assets/images/facade.jpg', 'Grand Twilight Facade')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/facade.jpg" alt="Grand Twilight Facade">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Exterior</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Grand Twilight Facade</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Rooms" onclick="openLightbox('assets/images/room-luxury.jpg', 'Super Deluxe Master Suite')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/room-luxury.jpg" alt="Super Deluxe Master Suite">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Suites</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Super Deluxe Master Suite</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Rooms" onclick="openLightbox('assets/images/room-deluxe.jpg', 'Deluxe Executive King Room')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/room-deluxe.jpg" alt="Deluxe Executive King Room">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Suites</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Deluxe Executive King Room</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Rooms" onclick="openLightbox('assets/images/room-suite.jpg', 'Presidential Royal Skyline Suite')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/room-suite.jpg" alt="Presidential Royal Skyline Suite">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Suites</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Presidential Royal Skyline Suite</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Banquet" onclick="openLightbox('assets/images/banquet.jpg', 'The Grand Varn Banquet Hall')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/banquet.jpg" alt="The Grand Varn Banquet Hall">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Banquets</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">The Grand Varn Banquet (6,500 Sq.Ft)</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Rooftop" onclick="openLightbox('assets/images/rooftop.jpg', 'Open Rooftop Sky Lounge at Sunset')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/rooftop.jpg" alt="Open Rooftop Sky Lounge">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Sky Lounge</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Open Rooftop Sky Lounge</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Pool" onclick="openLightbox('assets/images/pool.jpg', 'Illuminated Pool Party Zone')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/pool.jpg" alt="Pool Party Zone">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Pool Zone</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Illuminated Pool Party Zone</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Dining" onclick="openLightbox('assets/images/dining.jpg', 'Master Culinary Plating')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/dining.jpg" alt="Gourmet Cuisine">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Dining</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Gourmet Cuisine & Cocktail Plating</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="Banquet" onclick="openLightbox('assets/images/conference.jpg', 'Executive Conference Center')">
+                    <div class="experience-card" style="height:380px;cursor:pointer;">
+                        <img src="assets/images/conference.jpg" alt="Executive Conference">
+                        <div class="experience-overlay">
+                            <span class="experience-tag">Corporate</span>
+                            <h3 class="experience-title" style="font-size:1.4rem;">Executive Boardroom & Conference</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULLSCREEN LIGHTBOX -->
+    <div class="modal-backdrop" id="galleryLightbox" style="background:rgba(4,6,10,0.96);">
+        <div style="position:relative;max-width:92vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;">
+            <button type="button" id="lightboxClose" style="position:absolute;top:-45px;right:0;background:transparent;border:none;color:#fff;font-size:2.2rem;cursor:pointer;line-height:1;">&times;</button>
+            <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:80vh;border-radius:8px;border:1px solid var(--gold);box-shadow:var(--shadow-luxury);">
+            <div id="lightboxCaption" style="margin-top:1rem;color:var(--gold);font-family:var(--font-serif);font-size:1.3rem;letter-spacing:0.04em;text-align:center;"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>HOTEL VARN INN</h3>
+                    <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;">BY EPSILON &bull; ROORKEE</div>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">
+                        Roorkee's benchmark for 5-star luxury accommodations, royal celebrations, and elevated culinary moments on NH-58 Haridwar Road.
+                    </p>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9;">
+                        <div style="margin-bottom:0.5rem;display:flex;align-items:flex-start;gap:0.4rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                            <span>NH-58, Haridwar Road, near Vedandam Banquet Hall, Sherpur, Roorkee, Uttarakhand 247667</span>
+                        </div>
+                        <a href="tel:+917534999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 7534999777
+                        </a>
+                        <a href="tel:+918937999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 8937999777
+                        </a>
+                        <a href="https://wa.me/917534999777" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;display:flex;align-items:center;gap:0.4rem;">
+                            <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                            WhatsApp Concierge
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="rooms.html" class="footer-link">Deluxe Executive Room</a></li>
+                        <li><a href="rooms.html" class="footer-link">Super Deluxe Luxury Suite</a></li>
+                        <li><a href="rooms.html" class="footer-link">Presidential Royal Suite</a></li>
+                        <li><a href="amenities.html" class="footer-link">All Hotel Amenities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="events.html" class="footer-link">The Grand Varn Banquet</a></li>
+                        <li><a href="dining.html" class="footer-link">Sky Lounge Rooftop</a></li>
+                        <li><a href="events.html" class="footer-link">Executive Conference Center</a></li>
+                        <li><a href="amenities.html" class="footer-link">Pool Party Zone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-link">Photo Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Location &amp; Directions</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Hotel Varn Inn By Epsilon. All rights reserved.</div>
+                <div style="font-size:0.8rem;color:var(--text-muted);">NH-58 Haridwar Road, Sherpur, Roorkee, Uttarakhand 247667</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLOBAL BOOKING MODAL -->
+    <div class="modal-backdrop" id="globalBookingModal">
+        <div class="modal-container">
+            <button type="button" class="modal-close-btn">&times;</button>
+            <div style="text-align:center;margin-bottom:1.5rem;">
+                <span class="section-tag">Direct VIP Reservation</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--text-primary);margin-top:0.25rem;">Reserve Your Sanctuary</h3>
+                <p style="font-size:0.85rem;color:var(--text-secondary);">Direct booking best rate guarantee & front desk assistance.</p>
+            </div>
+            <form id="globalBookingForm">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Full Name *</label><input type="text" name="guest_name" class="form-control" placeholder="Your Full Name" required></div>
+                    <div><label class="form-label">Phone *</label><input type="tel" name="guest_phone" class="form-control" placeholder="+91 98765 43210" required></div>
+                </div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Email</label><input type="email" name="guest_email" class="form-control" placeholder="name@example.com" required></div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Select Room</label><select name="room_id" id="modalRoomSelect" class="form-control"><option value="1">Deluxe Executive Room (₹2,799 / night)</option><option value="2" selected>Super Deluxe Luxury Suite (₹4,499 / night)</option><option value="3">Presidential Royal Suite (₹7,499 / night)</option></select></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Check-In</label><input type="date" name="check_in" class="form-control" required></div>
+                    <div><label class="form-label">Check-Out</label><input type="date" name="check_out" class="form-control" required></div>
+                </div>
+                <button type="submit" class="btn btn-gold" style="width:100%;margin-top:0.5rem;">Confirm Reservation Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn" class="floating-whatsapp" data-bind="whatsapp_link" target="_blank" rel="noopener" title="WhatsApp Concierge">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.06 7.64C8.87 7.64 8.56 7.71 8.31 7.98C8.06 8.26 7.34 8.93 7.34 10.3C7.34 11.67 8.33 13 8.47 13.19C8.61 13.38 10.42 16.17 13.18 17.37C15.48 18.36 15.95 18.16 16.44 18.12C16.94 18.07 18.03 17.47 18.26 16.82C18.49 16.18 18.49 15.63 18.42 15.51C18.35 15.4 18.16 15.33 17.88 15.19C17.6 15.05 16.22 14.37 15.97 14.28C15.71 14.19 15.53 14.14 15.34 14.42C15.15 14.7 14.62 15.33 14.46 15.51C14.3 15.7 14.14 15.72 13.86 15.58C13.58 15.44 12.67 15.14 11.6 14.19C10.77 13.45 10.21 12.54 10.05 12.26C9.89 11.98 10.03 11.83 10.17 11.69C10.3 11.56 10.46 11.35 10.6 11.19C10.74 11.03 10.79 10.91 10.88 10.73C10.97 10.54 10.93 10.38 10.86 10.24C10.79 10.1 10.23 8.74 10 8.18C9.77 7.64 9.54 7.71 9.37 7.71C9.21 7.71 9.06 7.64 9.06 7.64Z"/>
+        </svg>
+    </a>
+
+    <script>
+        function openLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('galleryLightbox').classList.add('active');
+        }
+
+        document.getElementById('lightboxClose')?.addEventListener('click', () => {
+            document.getElementById('galleryLightbox').classList.remove('active');
+        });
+
+        function filterGal(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'All' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+</html>
+
+

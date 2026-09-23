@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banquets & Celebrations | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-badge">
+                <span class="top-bar-dot"></span>
+                <span data-bind="banner_status">OPENING SOON &bull; BOOKING OPEN NOW</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN NAV -->
+    <header class="main-header">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="brand-crest" viewBox="0 0 80 24" width="58" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 2 L43 9 L51 9 L45 14 L47 21 L40 17 L33 21 L35 14 L29 9 L37 9 Z" fill="url(#crestGoldEvents)" filter="drop-shadow(0 0 3px rgba(255,200,87,0.7))"/>
+                    <path d="M28 15 C20 11, 10 18, 2 15 C8 11, 18 10, 24 13" stroke="url(#crestGoldEvents)" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M52 15 C60 11, 70 18, 78 15 C72 11, 62 10, 56 13" stroke="url(#crestGoldEvents)" stroke-width="1.4" stroke-linecap="round"/>
+                    <circle cx="40" cy="13" r="5.5" stroke="url(#crestGoldEvents)" stroke-width="1.2" fill="#080c16"/>
+                    <text x="40" y="16" font-family="'Cinzel', serif" font-size="6.5" font-weight="700" fill="url(#crestGoldEvents)" text-anchor="middle">V</text>
+                    <defs>
+                        <linearGradient id="crestGoldEvents" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff5d6"/>
+                            <stop offset="50%" stop-color="#ffc857"/>
+                            <stop offset="100%" stop-color="#d48710"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-name">HOTEL VARN INN</div>
+                <div class="brand-byline" data-bind="hotel_brand">BY EPSILON • ROORKEE</div>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Suites & Sanctuaries</a>
+                <a href="dining.html" class="nav-link">Sky Lounge & Dining</a>
+                <a href="events.html" class="nav-link active">Banquets & Celebrations</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button type="button" class="btn btn-gold btn-sm nav-reserve-btn" data-open-booking>Reserve A Suite</button>
+                <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section" style="min-height:55vh;">
+        <div class="hero-bg-media">
+            <img src="assets/images/banquet.jpg" alt="Grand Banquet Hall Setup">
+        </div>
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-content">
+            <span class="section-tag">Grand Royal Galas</span>
+            <h1 class="hero-title">
+                Banquets &amp; <span class="font-italic text-gold-gradient">Celebrations</span>
+            </h1>
+            <p class="hero-subtitle">
+                Roorkee’s most distinguished 6,500 sq.ft pillarless ballroom and high-tech conference center for unforgettable weddings, receptions, and corporate summits.
+            </p>
+        </div>
+    </section>
+
+    <!-- VENUES -->
+    <section class="suites-section">
+        <div class="container">
+
+            <!-- Venue 1: The Grand Varn Banquet -->
+            <div class="suite-card-magazine">
+                <div class="suite-photo-wrap">
+                    <img src="assets/images/banquet.jpg" alt="The Grand Varn Banquet Hall">
+                    <span class="suite-badge" style="background:linear-gradient(135deg, #f59e0b, #997b24);color:#07090e;font-weight:700;">6,500 SQ.FT BALLROOM</span>
+                </div>
+                <div class="suite-details-wrap">
+                    <div class="suite-class-eyebrow">Weddings & Galas</div>
+                    <h2 class="suite-title">The Grand Varn Banquet Hall</h2>
+                    <div class="suite-specs-row">
+                        <span>600+ Theater Capacity</span> • <span>400 Banquet Seating</span> • <span>Pillarless Architecture</span>
+                    </div>
+                    <p class="suite-desc">
+                        Adorned with opulent crystal chandeliers, customizable mood lighting, grand ceremonial stage, dedicated dining pavilion, and royal bridal suite. Ideal for destination weddings, sangeet galas, and momentous celebrations.
+                    </p>
+                    <div style="margin-bottom:1.5rem;">
+                        <span class="amenity-pill">Crystal Chandeliers</span>
+                        <span class="amenity-pill">Pillarless Design</span>
+                        <span class="amenity-pill">Dedicated Dining Hall</span>
+                        <span class="amenity-pill">Private Bridal Suite</span>
+                        <span class="amenity-pill">Valet Parking for 200+ Cars</span>
+                    </div>
+                    <div class="suite-pricing-action">
+                        <div>
+                            <span class="suite-rate-num" style="font-size:1.4rem;">Weddings & Galas</span>
+                            <div class="suite-rate-period">Customized Bespoke Packages Available</div>
+                        </div>
+                        <a href="tel:7534999777" class="btn btn-gold btn-sm">
+                            Inquire for Dates &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venue 2: Conference Hall -->
+            <div class="suite-card-magazine">
+                <div class="suite-photo-wrap" style="order:2;">
+                    <img src="assets/images/conference.jpg" alt="Epsilon Executive Conference Center">
+                    <span class="suite-badge">2,200 SQ.FT CENTER</span>
+                </div>
+                <div class="suite-details-wrap" style="order:1;">
+                    <div class="suite-class-eyebrow">Corporate Summits & Boardrooms</div>
+                    <h2 class="suite-title">Epsilon Executive Conference Center</h2>
+                    <div class="suite-specs-row">
+                        <span>150 Theater Capacity</span> • <span>80 Boardroom Seating</span> • <span>High-Speed Optical Wi-Fi</span>
+                    </div>
+                    <p class="suite-desc">
+                        Engineered for high-stakes corporate board meetings, academic conferences, product launches, and seminars. Fitted with laser 4K projectors, surround acoustics, dual video conferencing hubs, and ergonomic leather seating.
+                    </p>
+                    <div style="margin-bottom:1.5rem;">
+                        <span class="amenity-pill">4K Laser Projection</span>
+                        <span class="amenity-pill">Dual Video Conferencing</span>
+                        <span class="amenity-pill">Podium & Audio System</span>
+                        <span class="amenity-pill">Dedicated Coffee Lounge</span>
+                    </div>
+                    <div class="suite-pricing-action">
+                        <div>
+                            <span class="suite-rate-num" style="font-size:1.4rem;">Corporate Days</span>
+                            <div class="suite-rate-period">Full-Day & Half-Day Delegate Rates</div>
+                        </div>
+                        <a href="tel:8937999777" class="btn btn-gold btn-sm">
+                            Book Conference &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEATING CAPACITY & VENUE MATRIX -->
+    <section style="padding:4.5rem 0;background:var(--bg-surface-elevated);border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <span class="section-tag">Spatial Planning</span>
+                <h2 class="section-title">Venues Capacity <span class="font-italic text-gold-gradient">&amp; Seating Layouts</span></h2>
+                <p class="section-subtitle">Engineered spatial dimensions for seamless royal celebrations and prestigious conferences.</p>
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;min-width:650px;background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-subtle);">
+                    <thead>
+                        <tr style="background:var(--bg-surface-elevated);border-bottom:2px solid var(--gold);">
+                            <th style="padding:1.1rem 1.4rem;text-align:left;font-family:var(--font-serif);color:var(--text-primary);font-size:0.95rem;">Venue Name</th>
+                            <th style="padding:1.1rem 1.4rem;text-align:center;font-family:var(--font-serif);color:var(--text-primary);font-size:0.95rem;">Area (Sq.Ft)</th>
+                            <th style="padding:1.1rem 1.4rem;text-align:center;font-family:var(--font-serif);color:var(--text-primary);font-size:0.95rem;">Theater Style</th>
+                            <th style="padding:1.1rem 1.4rem;text-align:center;font-family:var(--font-serif);color:var(--gold-dark);font-size:0.95rem;background:rgba(212,143,31,0.08);">Round Table Gala</th>
+                            <th style="padding:1.1rem 1.4rem;text-align:center;font-family:var(--font-serif);color:var(--text-primary);font-size:0.95rem;">Floating Reception</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size:0.85rem;color:var(--text-secondary);">
+                        <tr style="border-bottom:1px solid var(--border-subtle);">
+                            <td style="padding:1rem 1.4rem;font-weight:700;color:var(--text-primary);">The Grand Varn Ballroom</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">6,500 sq.ft</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">350+ Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;background:rgba(212,143,31,0.04);font-weight:600;">250 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;color:var(--gold-dark);font-weight:700;">600+ Guests</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-subtle);">
+                            <td style="padding:1rem 1.4rem;font-weight:700;color:var(--text-primary);">Open Rooftop Sky Lounge & Deck</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">4,000 sq.ft</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">180 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;background:rgba(212,143,31,0.04);font-weight:600;">120 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">220 Guests</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-subtle);">
+                            <td style="padding:1rem 1.4rem;font-weight:700;color:var(--text-primary);">Epsilon Conference Center</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">2,200 sq.ft</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">150 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;background:rgba(212,143,31,0.04);font-weight:600;">80 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">120 Guests</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1rem 1.4rem;font-weight:700;color:var(--text-primary);">Poolside Azure Lawn & Cabanas</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">3,500 sq.ft</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">120 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;background:rgba(212,143,31,0.04);font-weight:600;">90 Guests</td>
+                            <td style="padding:1rem 1.4rem;text-align:center;">200 Guests</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEDDINGS & CELEBRATIONS PILLARS -->
+    <section style="padding:5rem 0;background:#ffffff;border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3.5rem;">
+                <span class="section-tag">Royal Hospitality Services</span>
+                <h2 class="section-title">The Complete <span class="font-italic text-gold-gradient">Celebration Ecosystem</span></h2>
+                <p class="section-subtitle">From custom mandap artistry to dedicated wedding concierges, every detail handled with precision.</p>
+            </div>
+
+            <div class="feature-box-grid">
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V17H19V19Z"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Private Bridal Dressing Salon</h3>
+                    <p class="feature-box-desc">Lavish en-suite bridal suite with salon mirrors, climate control, refreshments, and direct secure passage to the ballroom stage.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Acoustic Audio &amp; DJ Stage</h3>
+                    <p class="feature-box-desc">Concert-grade line-array sound system, high-definition intelligent stage lighting, and professional rigging points.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M12 4v2M4 18h16M4 18a8 8 0 0 1 16 0M10 4h4"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Pure Vegetarian Royal Banquets</h3>
+                    <p class="feature-box-desc">Dedicated, uncompromised vegetarian kitchens preparing authentic regional delicacies, live chaat streets, and Awadhi dums.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="9" rx="2"/><path d="M5 11l2-6h10l2 6M6 17h.01M18 17h.01"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Dedicated 200+ Car Valet</h3>
+                    <p class="feature-box-desc">Spacious private paved parking grounds with uniformed valets ensuring zero roadside congestion for your wedding guests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT INQUIRY FORM -->
+    <section style="padding:5.5rem 0;background:var(--bg-base);border-bottom:1px solid var(--border-subtle);">
+        <div class="container" style="max-width:800px;">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <span class="section-tag">Event Planning</span>
+                <h2 class="section-title">Host Your <span class="font-italic text-gold-gradient">Grand Celebration</span></h2>
+                <p class="section-subtitle">Our dedicated event planners will design a bespoke package customized to your vision.</p>
+            </div>
+
+            <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:12px;padding:3rem;box-shadow:var(--shadow-luxury);">
+                <form id="contactInquiryForm">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.25rem;">
+                        <div>
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" name="name" class="form-control" required placeholder="e.g. Rajesh Singhal">
+                        </div>
+                        <div>
+                            <label class="form-label">Mobile Number *</label>
+                            <input type="tel" name="phone" class="form-control" required placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.25rem;">
+                        <div>
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" name="email" class="form-control" required placeholder="rajesh@company.com">
+                        </div>
+                        <div>
+                            <label class="form-label">Event Type</label>
+                            <select name="subject" class="form-control">
+                                <option value="Wedding & Sangeet Reception">Wedding & Sangeet Reception</option>
+                                <option value="Corporate Conference / Summit">Corporate Conference / Summit</option>
+                                <option value="Birthday / Anniversary Gala">Birthday / Anniversary Gala</option>
+                                <option value="Pool Party / Private Cabana">Pool Party / Private Cabana</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:1.75rem;">
+                        <label class="form-label">Estimated Guest Count & Special Requirements</label>
+                        <textarea name="message" class="form-control" rows="3" placeholder="Anticipated guest count, preferred dates, catering preferences (Veg/Non-Veg), room block requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold" style="width:100%;padding:1rem;">
+                        Submit Event Proposal Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>HOTEL VARN INN</h3>
+                    <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;">BY EPSILON &bull; ROORKEE</div>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">
+                        Roorkee's benchmark for 5-star luxury accommodations, royal celebrations, and elevated culinary moments on NH-58 Haridwar Road.
+                    </p>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9;">
+                        <div style="margin-bottom:0.5rem;display:flex;align-items:flex-start;gap:0.4rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                            <span>NH-58, Haridwar Road, near Vedandam Banquet Hall, Sherpur, Roorkee, Uttarakhand 247667</span>
+                        </div>
+                        <a href="tel:+917534999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 7534999777
+                        </a>
+                        <a href="tel:+918937999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 8937999777
+                        </a>
+                        <a href="https://wa.me/917534999777" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;display:flex;align-items:center;gap:0.4rem;">
+                            <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                            WhatsApp Concierge
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="rooms.html" class="footer-link">Deluxe Executive Room</a></li>
+                        <li><a href="rooms.html" class="footer-link">Super Deluxe Luxury Suite</a></li>
+                        <li><a href="rooms.html" class="footer-link">Presidential Royal Suite</a></li>
+                        <li><a href="amenities.html" class="footer-link">All Hotel Amenities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="events.html" class="footer-link">The Grand Varn Banquet</a></li>
+                        <li><a href="dining.html" class="footer-link">Sky Lounge Rooftop</a></li>
+                        <li><a href="events.html" class="footer-link">Executive Conference Center</a></li>
+                        <li><a href="amenities.html" class="footer-link">Pool Party Zone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-link">Photo Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Location &amp; Directions</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Hotel Varn Inn By Epsilon. All rights reserved.</div>
+                <div style="font-size:0.8rem;color:var(--text-muted);">NH-58 Haridwar Road, Sherpur, Roorkee, Uttarakhand 247667</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLOBAL BOOKING MODAL -->
+    <div class="modal-backdrop" id="globalBookingModal">
+        <div class="modal-container">
+            <button type="button" class="modal-close-btn">&times;</button>
+            <div style="text-align:center;margin-bottom:1.5rem;">
+                <span class="section-tag">Direct VIP Reservation</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--text-primary);margin-top:0.25rem;">Reserve Your Sanctuary</h3>
+                <p style="font-size:0.85rem;color:var(--text-secondary);">Direct booking best rate guarantee & front desk assistance.</p>
+            </div>
+            <form id="globalBookingForm">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Full Name *</label><input type="text" name="guest_name" class="form-control" placeholder="Your Full Name" required></div>
+                    <div><label class="form-label">Phone *</label><input type="tel" name="guest_phone" class="form-control" placeholder="+91 98765 43210" required></div>
+                </div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Email</label><input type="email" name="guest_email" class="form-control" placeholder="name@example.com" required></div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Select Room</label><select name="room_id" id="modalRoomSelect" class="form-control"><option value="1">Deluxe Executive Room (₹2,799 / night)</option><option value="2" selected>Super Deluxe Luxury Suite (₹4,499 / night)</option><option value="3">Presidential Royal Suite (₹7,499 / night)</option></select></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Check-In</label><input type="date" name="check_in" class="form-control" required></div>
+                    <div><label class="form-label">Check-Out</label><input type="date" name="check_out" class="form-control" required></div>
+                </div>
+                <button type="submit" class="btn btn-gold" style="width:100%;margin-top:0.5rem;">Confirm Reservation Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn" class="floating-whatsapp" data-bind="whatsapp_link" target="_blank" rel="noopener" title="WhatsApp Concierge">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.06 7.64C8.87 7.64 8.56 7.71 8.31 7.98C8.06 8.26 7.34 8.93 7.34 10.3C7.34 11.67 8.33 13 8.47 13.19C8.61 13.38 10.42 16.17 13.18 17.37C15.48 18.36 15.95 18.16 16.44 18.12C16.94 18.07 18.03 17.47 18.26 16.82C18.49 15.51C18.35 15.4 18.16 15.33 17.88 15.19C17.6 15.05 16.22 14.37 15.97 14.28C15.71 14.19 15.53 14.14 15.34 14.42C15.15 14.7 14.62 15.33 14.46 15.51C14.3 15.7 14.14 15.72 13.86 15.58C13.58 15.44 12.67 15.14 11.6 14.19C10.77 13.45 10.21 12.54 10.05 12.26C9.89 11.98 10.03 11.83 10.17 11.69C10.3 11.56 10.46 11.35 10.6 11.19C10.74 11.03 10.79 10.91 10.88 10.73C10.97 10.54 10.93 10.38 10.86 10.24C10.79 10.1 10.23 8.74 10 8.18C9.77 7.64 9.54 7.71 9.37 7.71C9.21 7.71 9.06 7.64 9.06 7.64Z"/>
+        </svg>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+</html>
+
+

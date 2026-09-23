@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel Varn Inn By Epsilon - 5-star luxury hotel in Roorkee featuring opulent suites, grand banquet hall (6,500 sq.ft, 600+ capacity), open rooftop sky lounge, and royal hospitality.">
+    <title>Hotel Varn Inn By Epsilon | 5-Star Luxury Suites, Banquets & Sky Lounge Roorkee</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-badge">
+                <span class="top-bar-dot"></span>
+                <span data-bind="banner_status">OPENING SOON &bull; BOOKING OPEN NOW</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FROSTED MAIN NAVIGATION -->
+    <header class="main-header">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="brand-crest" viewBox="0 0 80 24" width="58" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 2 L43 9 L51 9 L45 14 L47 21 L40 17 L33 21 L35 14 L29 9 L37 9 Z" fill="url(#crestGoldIndex)" filter="drop-shadow(0 0 3px rgba(255,200,87,0.7))"/>
+                    <path d="M28 15 C20 11, 10 18, 2 15 C8 11, 18 10, 24 13" stroke="url(#crestGoldIndex)" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M52 15 C60 11, 70 18, 78 15 C72 11, 62 10, 56 13" stroke="url(#crestGoldIndex)" stroke-width="1.4" stroke-linecap="round"/>
+                    <circle cx="40" cy="13" r="5.5" stroke="url(#crestGoldIndex)" stroke-width="1.2" fill="#080c16"/>
+                    <text x="40" y="16" font-family="'Cinzel', serif" font-size="6.5" font-weight="700" fill="url(#crestGoldIndex)" text-anchor="middle">V</text>
+                    <defs>
+                        <linearGradient id="crestGoldIndex" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff5d6"/>
+                            <stop offset="50%" stop-color="#ffc857"/>
+                            <stop offset="100%" stop-color="#d48710"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-name">HOTEL VARN INN</div>
+                <div class="brand-byline" data-bind="hotel_brand">BY EPSILON • ROORKEE</div>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="rooms.html" class="nav-link">Suites & Sanctuaries</a>
+                <a href="dining.html" class="nav-link">Sky Lounge & Dining</a>
+                <a href="events.html" class="nav-link">Banquets & Celebrations</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="btn btn-gold btn-sm nav-reserve-btn" data-open-booking>
+                    Reserve A Suite
+                </button>
+                <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CINEMATIC HERO -->
+    <section class="hero-section">
+        <div class="hero-bg-media">
+            <img src="assets/images/facade.jpg" alt="Hotel Varn Inn Architectural Facade">
+        </div>
+        <div class="hero-overlay-gradient"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge-crown">
+                <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:var(--gold-bright);"><path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V17H19V19Z"/></svg>
+                <span>SKY LOUNGE &amp; ROOFTOP • ROORKEE</span>
+            </div>
+
+            <h1 class="hero-title">
+                Where Heritage Grandeur Meets <span class="font-italic text-gold-gradient">Modern Opulence</span>
+            </h1>
+
+            <p class="hero-subtitle" data-bind="hero_subtitle">
+                Roorkee’s premier destination featuring opulent suites, grand banquet celebrations, open-air sky lounge dining, and royal hospitality.
+            </p>
+
+            <div style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin-top:0.5rem;">
+                <button type="button" class="btn btn-gold" data-open-booking style="min-width:170px;">
+                    <span>Check Availability</span>
+                </button>
+                <a href="rooms.html" class="btn btn-outline-gold" style="min-width:170px;">
+                    <span>Explore Suites &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE ARCHITECTURAL BOOKING BAR -->
+    <div class="booking-bar-wrapper">
+        <div class="booking-bar-card">
+            <div class="booking-bar-field">
+                <label class="booking-field-label">
+                    <svg class="booking-field-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Check-In Date
+                </label>
+                <input type="date" id="quickCheckIn" class="booking-field-input" required>
+            </div>
+
+            <div class="booking-bar-field">
+                <label class="booking-field-label">
+                    <svg class="booking-field-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Check-Out Date
+                </label>
+                <input type="date" id="quickCheckOut" class="booking-field-input" required>
+            </div>
+
+            <div class="booking-bar-field">
+                <label class="booking-field-label">
+                    <svg class="booking-field-icon" viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>
+                    Suite Category
+                </label>
+                <select id="quickRoomCategory" class="booking-field-input">
+                    <option value="1">Deluxe Executive Room (₹2,799 / night)</option>
+                    <option value="2" selected>Super Deluxe Luxury Suite (₹4,499 / night)</option>
+                    <option value="3">Presidential Royal Suite (₹7,499 / night)</option>
+                </select>
+            </div>
+
+            <div class="booking-bar-field">
+                <label class="booking-field-label">
+                    <svg class="booking-field-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Guests &amp; Adults
+                </label>
+                <select id="quickGuests" class="booking-field-input">
+                    <option value="1">1 Adult (Single Occupancy)</option>
+                    <option value="2" selected>2 Adults (Double Occupancy)</option>
+                    <option value="3">3 Adults (Suite Occupancy)</option>
+                    <option value="4">4+ Adults (Presidential)</option>
+                </select>
+            </div>
+
+            <div style="display:flex;align-items:flex-end;">
+                <button type="button" class="btn btn-gold" id="quickBookBtn" style="white-space:nowrap;padding:1rem 1.75rem;height:54px;">Reserve Now &#8594;</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CURATOR'S NOTE & THE ESSENCE -->
+    <section class="editorial-section">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-image-frame">
+                    <img src="assets/images/room-luxury.jpg" alt="Varn Inn Luxury Suite">
+                    <div class="editorial-badge-float">
+                        <div style="font-family:var(--font-serif);font-size:2rem;color:var(--gold);line-height:1;">EST. 2026</div>
+                        <div style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;margin-top:0.25rem;">ROORKEE • UTTARAKHAND</div>
+                    </div>
+                </div>
+
+                <div class="editorial-content">
+                    <span class="section-tag">An Oasis of Distinction</span>
+                    <h2>A Sanctuary of Splendor on <span class="font-italic text-gold-gradient">Haridwar Road</span></h2>
+                    <p>
+                        Conceived as a tribute to timeless royal hospitality, <strong>Hotel Varn Inn By Epsilon</strong> brings together classical architectural grandeur, bespoke culinary wizardry, and peaceful modern comfort.
+                    </p>
+                    <p>
+                        Whether curating unforgettable wedding celebrations in our sprawling <strong>6,500 sq.ft banquet hall</strong>, savoring signature mocktails under starry skies at our <strong>Open Rooftop Sky Lounge</strong>, or resting in tailored Italian marble suites, every moment is an elevated sensory experience.
+                    </p>
+
+                    <div style="display:flex;gap:1.5rem;align-items:center;margin-top:2rem;">
+                        <a href="contact.html" class="btn btn-outline-gold">Direct Concierge</a>
+                        <a href="tel:7534999777" style="color:var(--gold);font-weight:600;font-size:0.9rem;">Call Front Desk: +91 7534999777 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEY STATS STRIP -->
+            <div class="stats-strip">
+                <div>
+                    <div class="stat-num">6,500</div>
+                    <div class="stat-desc">SQ.FT Banquet Ballroom</div>
+                </div>
+                <div>
+                    <div class="stat-num">600+</div>
+                    <div class="stat-desc">Royal Gala Capacity</div>
+                </div>
+                <div>
+                    <div class="stat-num">360°</div>
+                    <div class="stat-desc">Panoramic Sky Lounge</div>
+                </div>
+                <div>
+                    <div class="stat-num">24/7</div>
+                    <div class="stat-desc">Royal Butler & Room Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUITES & SANCTUARIES (MAGAZINE SHOWCASE) -->
+    <section class="suites-section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:4rem;">
+                <span class="section-tag">Accommodations</span>
+                <h2 class="section-title">Rooms & <span class="font-italic text-gold-gradient">Royal Suites</span></h2>
+                <p class="section-subtitle">
+                    Each sanctuary is meticulously tailored with custom Italian furnishings, ambient climate control, high-speed optical connectivity, and deep soaking marble baths.
+                </p>
+            </div>
+
+            <!-- Suite 1: Deluxe Room -->
+            <div class="suite-card-magazine">
+                <div class="suite-photo-wrap">
+                    <img src="assets/images/room-deluxe.jpg" alt="Deluxe Executive Room">
+                    <span class="suite-badge">Most Popular</span>
+                </div>
+                <div class="suite-details-wrap">
+                    <div class="suite-class-eyebrow">Deluxe Class</div>
+                    <h3 class="suite-title">Deluxe Executive Room</h3>
+                    <div class="suite-specs-row">
+                        <span>King Bed</span> • <span>2 Adults</span> • <span>380 sq.ft</span> • <span>Garden & City View</span>
+                    </div>
+                    <p class="suite-desc">
+                        Elegantly furnished with warm Italian wood paneling, ergonomic work desk, smart 55" 4K television, climate control, and rain shower bath.
+                    </p>
+                    <div style="margin-bottom:1.5rem;">
+                        <span class="amenity-pill">High-Speed Wi-Fi</span>
+                        <span class="amenity-pill">Smart 4K TV</span>
+                        <span class="amenity-pill">Rain Shower</span>
+                        <span class="amenity-pill">24/7 In-Room Dining</span>
+                    </div>
+                    <div class="suite-pricing-action">
+                        <div>
+                            <span style="text-decoration:line-through;color:var(--text-muted);font-size:0.95rem;margin-right:0.5rem;">₹3,499</span>
+                            <span class="suite-rate-num">₹2,799</span>
+                            <span class="suite-rate-period">/ night</span>
+                        </div>
+                        <button type="button" class="btn btn-gold btn-sm" data-open-booking data-room-id="1">
+                            Book This Room
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suite 2: Super Deluxe Suite -->
+            <div class="suite-card-magazine">
+                <div class="suite-photo-wrap" style="order:2;">
+                    <img src="assets/images/room-luxury.jpg" alt="Super Deluxe Luxury Suite">
+                    <span class="suite-badge" style="background:linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,0,0,0.8));">Luxury Choice</span>
+                </div>
+                <div class="suite-details-wrap" style="order:1;">
+                    <div class="suite-class-eyebrow">Luxury Class</div>
+                    <h3 class="suite-title">Super Deluxe Luxury Suite</h3>
+                    <div class="suite-specs-row">
+                        <span>Royal King Bed</span> • <span>3 Adults</span> • <span>520 sq.ft</span> • <span>Panoramic Sunset Skyline</span>
+                    </div>
+                    <p class="suite-desc">
+                        Expansive sanctuary with separate lounge seating, illuminated golden headboards, bespoke artwork, deep soaking tub, and priority Sky Lounge access.
+                    </p>
+                    <div style="margin-bottom:1.5rem;">
+                        <span class="amenity-pill">Panoramic Skyline View</span>
+                        <span class="amenity-pill">Deep Soaking Bathtub</span>
+                        <span class="amenity-pill">Private Lounge</span>
+                        <span class="amenity-pill">Nespresso Coffee Bar</span>
+                    </div>
+                    <div class="suite-pricing-action">
+                        <div>
+                            <span style="text-decoration:line-through;color:var(--text-muted);font-size:0.95rem;margin-right:0.5rem;">₹5,499</span>
+                            <span class="suite-rate-num">₹4,499</span>
+                            <span class="suite-rate-period">/ night</span>
+                        </div>
+                        <button type="button" class="btn btn-gold btn-sm" data-open-booking data-room-id="2">
+                            Book Luxury Suite
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suite 3: Presidential Suite -->
+            <div class="suite-card-magazine">
+                <div class="suite-photo-wrap">
+                    <img src="assets/images/room-suite.jpg" alt="Presidential Royal Suite">
+                    <span class="suite-badge" style="background:linear-gradient(135deg, #f59e0b, #997b24);color:#07090e;font-weight:700;">Royal Flagship</span>
+                </div>
+                <div class="suite-details-wrap">
+                    <div class="suite-class-eyebrow">Presidential Class</div>
+                    <h3 class="suite-title">Presidential Royal Suite</h3>
+                    <div class="suite-specs-row">
+                        <span>Imperial Master Bed</span> • <span>4 Adults</span> • <span>950 sq.ft</span> • <span>360° Skyline View</span>
+                    </div>
+                    <p class="suite-desc">
+                        The zenith of opulence. Features private dining salon, marble fireplace, powder room, butler pantry, private jacuzzi, and dedicated VIP privileges.
+                    </p>
+                    <div style="margin-bottom:1.5rem;">
+                        <span class="amenity-pill">Dedicated 24/7 Butler</span>
+                        <span class="amenity-pill">Private Dining Salon</span>
+                        <span class="amenity-pill">Private Jacuzzi Spa</span>
+                        <span class="amenity-pill">Free Airport Pickup</span>
+                    </div>
+                    <div class="suite-pricing-action">
+                        <div>
+                            <span style="text-decoration:line-through;color:var(--text-muted);font-size:0.95rem;margin-right:0.5rem;">₹8,999</span>
+                            <span class="suite-rate-num">₹7,499</span>
+                            <span class="suite-rate-period">/ night</span>
+                        </div>
+                        <button type="button" class="btn btn-gold btn-sm" data-open-booking data-room-id="3">
+                            Book Presidential
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:2rem;">
+                <a href="rooms.html" class="btn btn-outline-gold" style="padding:1rem 2.5rem;">
+                    View Complete Accommodations Catalog &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISTINCTIVE EXPERIENCES (BANQUETS, ROOFTOP, POOL, DINING) -->
+    <section class="experiences-section">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:4rem;">
+                <span class="section-tag">World-Class Offerings</span>
+                <h2 class="section-title">Our Distinctive <span class="font-italic text-gold-gradient">Experiences</span></h2>
+                <p class="section-subtitle">
+                    Designed to cater to every celebration — whether a grand royal wedding, an intimate starlit dinner, or an energizing pool celebration.
+                </p>
+            </div>
+
+            <div class="experiences-grid">
+                <!-- 1. Banquet -->
+                <div class="experience-card">
+                    <img src="assets/images/banquet.jpg" alt="The Grand Varn Banquet Hall" loading="lazy">
+                    <div class="experience-overlay">
+                        <span class="experience-tag">Weddings & Galas</span>
+                        <h3 class="experience-title">The Grand Varn Banquet Hall</h3>
+                        <p class="experience-desc">
+                            A 6,500 sq.ft pillarless ballroom with crystal chandeliers, royal bridal suite, and 600+ gala capacity.
+                        </p>
+                        <a href="events.html" class="btn btn-gold btn-sm" style="align-self:flex-start;">Explore Banquets &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- 2. Rooftop -->
+                <div class="experience-card">
+                    <img src="assets/images/rooftop.jpg" alt="Open Rooftop Sky Lounge" loading="lazy">
+                    <div class="experience-overlay">
+                        <span class="experience-tag">Starlit Dining</span>
+                        <h3 class="experience-title">Open Rooftop Sky Lounge</h3>
+                        <p class="experience-desc">
+                            Breathtaking skyline vistas, artisanal botanical elixirs, live grills, and ambient music under the stars.
+                        </p>
+                        <a href="dining.html" class="btn btn-gold btn-sm" style="align-self:flex-start;">View Lounge Menu &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- 3. Pool -->
+                <div class="experience-card">
+                    <img src="assets/images/pool.jpg" alt="Pool Party Zone" loading="lazy">
+                    <div class="experience-overlay">
+                        <span class="experience-tag">Leisure & Cabana</span>
+                        <h3 class="experience-title">Pool Party Zone & Bar</h3>
+                        <p class="experience-desc">
+                            Crystal azure waters with poolside loungers, submerged seating, and audio for private gatherings.
+                        </p>
+                        <a href="amenities.html" class="btn btn-gold btn-sm" style="align-self:flex-start;">Explore Amenities &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- 4. Conference -->
+                <div class="experience-card">
+                    <img src="assets/images/conference.jpg" alt="Conference Hall" loading="lazy">
+                    <div class="experience-overlay">
+                        <span class="experience-tag">Corporate Summits</span>
+                        <h3 class="experience-title">Executive Conference Hall</h3>
+                        <p class="experience-desc">
+                            Engineered for high-stakes corporate boardrooms with 4K laser projection and dual video hubs.
+                        </p>
+                        <a href="events.html" class="btn btn-gold btn-sm" style="align-self:flex-start;">Corporate Booking &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRATEGIC CONNECTIVITY & LOCATION STRIP -->
+    <section style="padding:4.5rem 0;background:var(--bg-surface-elevated);border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <span class="section-tag">Strategic Gateway</span>
+                <h2 class="section-title">Prime NH-58 <span class="font-italic text-gold-gradient">Connectivity</span></h2>
+                <p class="section-subtitle">
+                    Conveniently positioned on Haridwar Road with effortless transit to sacred shrines, premier academic institutions, and corporate corridors.
+                </p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1.25rem;">
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:1.6rem 1.4rem;text-align:center;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M14 10v11M12 2L2 7h20L12 2z"/></svg>
+                    </div>
+                    <div style="font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold-dark);">10 Mins</div>
+                    <div style="font-weight:600;font-size:0.95rem;color:var(--text-primary);margin-top:0.25rem;">IIT Roorkee Main Gate</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">4.8 km via NH-58</div>
+                </div>
+
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:1.6rem 1.4rem;text-align:center;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="3"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="8.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/><line x1="6" y1="21" x2="8" y2="18"/><line x1="18" y1="21" x2="16" y2="18"/></svg>
+                    </div>
+                    <div style="font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold-dark);">12 Mins</div>
+                    <div style="font-weight:600;font-size:0.95rem;color:var(--text-primary);margin-top:0.25rem;">Roorkee Railway Station</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">5.5 km direct corridor</div>
+                </div>
+
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:1.6rem 1.4rem;text-align:center;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M12 2c2 3.5 6 7.5 6 12a6 6 0 0 1-12 0c0-4.5 4-8.5 6-12z"/><path d="M12 10c1 1.5 3 3.5 3 5.5a3 3 0 0 1-6 0c0-2 2-4 3-5.5z"/></svg>
+                    </div>
+                    <div style="font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold-dark);">25 Mins</div>
+                    <div style="font-weight:600;font-size:0.95rem;color:var(--text-primary);margin-top:0.25rem;">Haridwar (Har Ki Pauri)</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">22 km highway drive</div>
+                </div>
+
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:1.6rem 1.4rem;text-align:center;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.8-.2-1.6.3-1.8 1.1-.2.8.2 1.6 1 1.8l6.3 3.1-3.6 3.6-2.5-.5c-.4-.1-.8.1-1.1.4l-.8.8 3.5 2 2 3.5.8-.8c.3-.3.5-.7.4-1.1l-.5-2.5 3.6-3.6 3.1 6.3c.3.7 1.1 1.1 1.8 1 .8-.2 1.3-1 1.1-1.8z"/></svg>
+                    </div>
+                    <div style="font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold-dark);">60 Mins</div>
+                    <div style="font-weight:600;font-size:0.95rem;color:var(--text-primary);margin-top:0.25rem;">Jolly Grant Airport (DED)</div>
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">62 km via Dehradun Expressway</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUE PILLARS (WHY GUESTS CHOOSE US) -->
+    <section style="padding:5rem 0;background:#ffffff;border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3.5rem;">
+                <span class="section-tag">The Varn Standard</span>
+                <h2 class="section-title">Engineered For <span class="font-italic text-gold-gradient">Flawless Comfort</span></h2>
+                <p class="section-subtitle">
+                    Every touchpoint is designed with absolute attention to comfort, convenience, and safety.
+                </p>
+            </div>
+
+            <div class="feature-box-grid">
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="9" rx="2"/><path d="M5 11l2-6h10l2 6M6 17h.01M18 17h.01"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">200+ Car Valet Parking</h3>
+                    <p class="feature-box-desc">
+                        Expansive dedicated parking grounds with professional 24/7 valet service and surveillance for hassle-free wedding and guest arrivals.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">100% Dual Power Backup</h3>
+                    <p class="feature-box-desc">
+                        Heavy-duty industrial generator sets ensure zero interruption to air conditioning, elevators, and banquet stage illuminations.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M12 4v2M4 18h16M4 18a8 8 0 0 1 16 0M10 4h4"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Dedicated Banquet Kitchens</h3>
+                    <p class="feature-box-desc">
+                        State-of-the-art hygienic kitchens with segregated preparation zones for pure vegetarian feasts and specialized international catering.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Multi-Tier Security & CCTV</h3>
+                    <p class="feature-box-desc">
+                        24-hour round-the-clock trained security personnel, electronic keycard access, and continuous HD CCTV surveillance throughout premises.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">Enterprise High-Speed Wi-Fi</h3>
+                    <p class="feature-box-desc">
+                        Dedicated gigabit optical fiber lines delivering seamless high-speed connectivity across suites, boardrooms, and outdoor lounges.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="luxury-icon-box">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M2 18h20M12 4v3M18 18a6 6 0 0 0-12 0M10 4h4"/></svg>
+                    </div>
+                    <h3 class="feature-box-title">24/7 Concierge & Room Service</h3>
+                    <p class="feature-box-desc">
+                        From midnight gourmet orders to personalized local itinerary arrangements and airport transfers, our concierge is at your service.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (FAQS) -->
+    <section style="padding:5rem 0;background:var(--bg-base);border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3.5rem;">
+                <span class="section-tag">Guest Information</span>
+                <h2 class="section-title">Frequently Asked <span class="font-italic text-gold-gradient">Questions</span></h2>
+                <p class="section-subtitle">
+                    Essential details to ensure your stay and celebrations at Hotel Varn Inn are effortless.
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>What are the standard Check-in and Check-out timings?</span>
+                        <span style="color:var(--gold-dark);font-size:1.2rem;">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Standard Check-in begins at <strong>2:00 PM</strong> and Check-out is at <strong>11:00 AM</strong>. Early check-in or late check-out can be arranged subject to suite availability by contacting our front desk concierge in advance.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>What is the guest capacity for The Grand Varn Banquet Hall?</span>
+                        <span style="color:var(--gold-dark);font-size:1.2rem;">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Our 6,500 sq.ft pillarless ballroom comfortably accommodates up to <strong>600+ guests</strong> in floating reception setup, 350+ in theater format, and 250+ in banquet round-table dining layout. Combined with the open poolside lawn, large weddings up to 800+ guests can be hosted.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>Is table reservation required for the Open Rooftop Sky Lounge?</span>
+                        <span style="color:var(--gold-dark);font-size:1.2rem;">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        While walk-in guests are welcome, we strongly recommend reserving your rooftop table in advance for weekend evenings and celebratory dinners to guarantee prime skyline views. You can reserve instantly via WhatsApp or direct front desk call.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>Is on-site parking available for hotel and banquet attendees?</span>
+                        <span style="color:var(--gold-dark);font-size:1.2rem;">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. Hotel Varn Inn features expansive private parking capable of accommodating <strong>200+ vehicles</strong> simultaneously, complete with complimentary valet parking service and 24/7 security surveillance.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>What is the hotel's cancellation and modification policy?</span>
+                        <span style="color:var(--gold-dark);font-size:1.2rem;">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Individual suite reservations can be cancelled or rescheduled free of charge up to 24 hours prior to the scheduled check-in date. For wedding blocks and banquet reservations, customized terms apply as specified in your event agreement.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECT CONCIERGE HOTLINE STRIP -->
+    <section style="padding:3.5rem 0;background:linear-gradient(135deg, #181c24 0%, #252c38 100%);color:#ffffff;border-top:1px solid var(--gold-border);">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+            <div>
+                <span style="color:var(--gold-bright);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;">Direct Front Desk Concierge</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.65rem;color:#ffffff;margin-top:0.25rem;">Planning a Stay or Grand Celebration?</h3>
+                <p style="color:#cbd5e1;font-size:0.9rem;margin-top:0.35rem;">Speak directly with our reservation managers for best negotiated direct tariff.</p>
+            </div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <a href="tel:+917534999777" class="btn btn-gold" style="padding:0.85rem 1.6rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                    <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Call +91 7534999777
+                </a>
+                <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn" target="_blank" rel="noopener" class="btn btn-outline-gold" style="background:transparent;color:#ffffff;border-color:rgba(255,255,255,0.4);padding:0.85rem 1.6rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                    <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:#25d366;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                    WhatsApp Concierge
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>HOTEL VARN INN</h3>
+                    <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;">BY EPSILON &bull; ROORKEE</div>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">
+                        Roorkee's benchmark for 5-star luxury accommodations, royal celebrations, and elevated culinary moments on NH-58 Haridwar Road.
+                    </p>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9;">
+                        <div style="margin-bottom:0.5rem;display:flex;align-items:flex-start;gap:0.4rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                            <span>NH-58, Haridwar Road, near Vedandam Banquet Hall, Sherpur, Roorkee, Uttarakhand 247667</span>
+                        </div>
+                        <a href="tel:+917534999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 7534999777
+                        </a>
+                        <a href="tel:+918937999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 8937999777
+                        </a>
+                        <a href="https://wa.me/917534999777" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;display:flex;align-items:center;gap:0.4rem;">
+                            <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                            WhatsApp Concierge
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="rooms.html" class="footer-link">Deluxe Executive Room</a></li>
+                        <li><a href="rooms.html" class="footer-link">Super Deluxe Luxury Suite</a></li>
+                        <li><a href="rooms.html" class="footer-link">Presidential Royal Suite</a></li>
+                        <li><a href="amenities.html" class="footer-link">All Hotel Amenities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="events.html" class="footer-link">The Grand Varn Banquet</a></li>
+                        <li><a href="dining.html" class="footer-link">Sky Lounge Rooftop</a></li>
+                        <li><a href="events.html" class="footer-link">Executive Conference Center</a></li>
+                        <li><a href="amenities.html" class="footer-link">Pool Party Zone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-link">Photo Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Location &amp; Directions</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Hotel Varn Inn By Epsilon. All rights reserved.</div>
+                <div style="font-size:0.8rem;color:var(--text-muted);">NH-58 Haridwar Road, Sherpur, Roorkee, Uttarakhand 247667</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLOBAL BOOKING MODAL -->
+    <div class="modal-backdrop" id="globalBookingModal">
+        <div class="modal-container">
+            <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div style="text-align:center;margin-bottom:1.5rem;">
+                <span class="section-tag">Direct VIP Reservation</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--text-primary);margin-top:0.25rem;">Reserve Your Sanctuary</h3>
+                <p style="font-size:0.85rem;color:var(--text-secondary);">Direct booking best rate guarantee & front desk assistance.</p>
+            </div>
+
+            <form id="globalBookingForm">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div>
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" name="guest_name" class="form-control" placeholder="e.g. Vikram Malhotra" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Mobile Number *</label>
+                        <input type="tel" name="guest_phone" class="form-control" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:1rem;">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" name="guest_email" class="form-control" placeholder="vikram@example.com" required>
+                </div>
+
+                <div style="margin-bottom:1rem;">
+                    <label class="form-label">Selected Room / Suite *</label>
+                    <select name="room_id" id="modalRoomSelect" class="form-control" required>
+                        <option value="1">Deluxe Executive Room (₹2,799 / night)</option>
+                        <option value="2" selected>Super Deluxe Luxury Suite (₹4,499 / night)</option>
+                        <option value="3">Presidential Royal Suite (₹7,499 / night)</option>
+                    </select>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div>
+                        <label class="form-label">Check-In Date *</label>
+                        <input type="date" name="check_in" class="form-control" id="modalCheckIn" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Check-Out Date *</label>
+                        <input type="date" name="check_out" class="form-control" id="modalCheckOut" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:1.5rem;">
+                    <label class="form-label">Special Requests (Optional)</label>
+                    <textarea name="special_requests" class="form-control" rows="2" placeholder="Anniversary setup, high floor skyline view, airport transfer..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-gold" style="width:100%;">
+                    Confirm Reservation Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn" class="floating-whatsapp" data-bind="whatsapp_link" target="_blank" rel="noopener" title="WhatsApp Concierge">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.06 7.64C8.87 7.64 8.56 7.71 8.31 7.98C8.06 8.26 7.34 8.93 7.34 10.3C7.34 11.67 8.33 13 8.47 13.19C8.61 13.38 10.42 16.17 13.18 17.37C15.48 18.36 15.95 18.16 16.44 18.12C16.94 18.07 18.03 17.47 18.26 16.82C18.49 16.18 18.49 15.63 18.42 15.51C18.35 15.4 18.16 15.33 17.88 15.19C17.6 15.05 16.22 14.37 15.97 14.28C15.71 14.19 15.53 14.14 15.34 14.42C15.15 14.7 14.62 15.33 14.46 15.51C14.3 15.7 14.14 15.72 13.86 15.58C13.58 15.44 12.67 15.14 11.6 14.19C10.77 13.45 10.21 12.54 10.05 12.26C9.89 11.98 10.03 11.83 10.17 11.69C10.3 11.56 10.46 11.35 10.6 11.19C10.74 11.03 10.79 10.91 10.88 10.73C10.97 10.54 10.93 10.38 10.86 10.24C10.79 10.1 10.23 8.74 10 8.18C9.77 7.64 9.54 7.71 9.37 7.71C9.21 7.71 9.06 7.64 9.06 7.64Z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+        if (document.getElementById('quickCheckIn')) document.getElementById('quickCheckIn').value = today;
+        if (document.getElementById('quickCheckOut')) document.getElementById('quickCheckOut').value = tomorrow;
+        if (document.getElementById('modalCheckIn')) document.getElementById('modalCheckIn').value = today;
+        if (document.getElementById('modalCheckOut')) document.getElementById('modalCheckOut').value = tomorrow;
+
+        // Hook quick booking bar to modal
+        document.getElementById('quickBookBtn')?.addEventListener('click', () => {
+            const inDate = document.getElementById('quickCheckIn').value;
+            const outDate = document.getElementById('quickCheckOut').value;
+            const roomVal = document.getElementById('quickRoomCategory').value;
+
+            if (document.getElementById('modalCheckIn')) document.getElementById('modalCheckIn').value = inDate;
+            if (document.getElementById('modalCheckOut')) document.getElementById('modalCheckOut').value = outDate;
+            if (document.getElementById('modalRoomSelect')) document.getElementById('modalRoomSelect').value = roomVal;
+
+            const modal = document.getElementById('globalBookingModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+</html>
+
+
+
+
+
+

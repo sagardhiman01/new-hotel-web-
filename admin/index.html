@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-title">Total Bookings</div>
+                        <div class="kpi-value" id="kpiTotalBookings">0</div>
+                        <div style="font-size:0.75rem;color:#f59e0b;margin-top:0.25rem;" id="kpiPendingBookings">0 Pending</div>
+                    </div>
+                    <div class="kpi-icon-wrap" style="background:rgba(212,175,55,0.15);color:var(--adm-gold);">🛎️</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-title">Rooms & Suites</div>
+                        <div class="kpi-value" id="kpiTotalRooms">0</div>
+                        <div style="font-size:0.75rem;color:var(--adm-text-muted);margin-top:0.25rem;">Active Suites</div>
+                    </div>
+                    <div class="kpi-icon-wrap" style="background:rgba(59,130,246,0.15);color:#3b82f6;">🛏️</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-title">Menu Offerings</div>
+                        <div class="kpi-value" id="kpiTotalDining">0</div>
+                        <div style="font-size:0.75rem;color:var(--adm-text-muted);margin-top:0.25rem;">Dishes & Drinks</div>
+                    </div>
+                    <div class="kpi-icon-wrap" style="background:rgba(16,185,129,0.15);color:#10b981;">🍽️</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div>
+                        <div class="kpi-title">Guest Inquiries</div>
+                        <div class="kpi-value" id="kpiTotalMessages">0</div>
+                        <div style="font-size:0.75rem;color:#a78bfa;margin-top:0.25rem;" id="kpiUnreadMessages">0 Unread</div>
+                    </div>
+                    <div class="kpi-icon-wrap" style="background:rgba(124,58,237,0.15);color:#a78bfa;">✉️</div>
+                </div>
+            </div>
+
+            <!-- Customizer Shortcuts -->
+            <div class="admin-card" style="margin-bottom:2rem;background:linear-gradient(135deg, rgba(31,11,53,0.6) 0%, rgba(20,27,41,0.9) 100%);border-color:var(--adm-border-gold);">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+                    <div>
+                        <h3 class="font-heading" style="color:var(--adm-gold);font-size:1.25rem;">A-to-Z Website Customization</h3>
+                        <p style="color:var(--adm-text-muted);font-size:0.85rem;margin-top:0.25rem;">
+                            Customize hotel details, phones (+91 7534999777, +91 8937999777), address, hero headlines, menu, and gallery in real-time.
+                        </p>
+                    </div>
+                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                        <a href="settings.html" class="btn btn-adm-gold btn-adm-sm">Site Settings ⚙️</a>
+                        <a href="rooms.html" class="btn btn-adm-secondary btn-adm-sm">Manage Rooms 🛏️</a>
+                        <a href="dining.html" class="btn btn-adm-secondary btn-adm-sm">Manage Dining 🍷</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Bookings Table -->
+            <div class="admin-card" style="margin-bottom:2rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+                    <div>
+                        <h3 class="font-heading" style="font-size:1.15rem;color:#fff;">Recent Guest Reservations</h3>
+                        <p style="font-size:0.8rem;color:var(--adm-text-muted);">Real-time booking requests from the website</p>
+                    </div>
+                    <a href="bookings.html" class="btn btn-adm-secondary btn-adm-sm">View All Bookings &rarr;</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking Code</th>
+                                <th>Guest Details</th>
+                                <th>Suite / Room</th>
+                                <th>Dates</th>
+                                <th>Status</th>
+                                <th>Update Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentBookingsTbody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Messages -->
+            <div class="admin-card">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+                    <div>
+                        <h3 class="font-heading" style="font-size:1.15rem;color:#fff;">Recent Guest Inquiries</h3>
+                        <p style="font-size:0.8rem;color:var(--adm-text-muted);">Inquiries submitted via the Contact & Event forms</p>
+                    </div>
+                    <a href="messages.html" class="btn btn-adm-secondary btn-adm-sm">View All Messages &rarr;</a>
+                </div>
+
+                <div id="recentMessagesContainer" style="display:flex;flex-direction:column;gap:1rem;">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('dashboard', 'Executive Dashboard');
+
+            // 1. Calculate & render KPIs
+            const bookings = HotelStore.getBookings();
+            const rooms = HotelStore.getRooms();
+            const dining = HotelStore.getDining();
+            const messages = HotelStore.getMessages();
+
+            const pendingBookings = bookings.filter(b => b.status === 'pending').length;
+            const unreadMessages = messages.filter(m => m.status === 'unread').length;
+            let totalDishes = 0;
+            dining.forEach(cat => totalDishes += (cat.items || []).length);
+
+            document.getElementById('kpiTotalBookings').textContent = bookings.length;
+            document.getElementById('kpiPendingBookings').textContent = `${pendingBookings} Pending Review`;
+            document.getElementById('kpiTotalRooms').textContent = rooms.length;
+            document.getElementById('kpiTotalDining').textContent = totalDishes;
+            document.getElementById('kpiTotalMessages').textContent = messages.length;
+            document.getElementById('kpiUnreadMessages').textContent = `${unreadMessages} Unread`;
+
+            // 2. Render Recent Bookings (top 6)
+            const tbody = document.getElementById('recentBookingsTbody');
+            const recentBookings = bookings.slice(0, 6);
+
+            if (recentBookings.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--adm-text-muted);padding:2rem;">No bookings recorded yet.</td></tr>';
+            } else {
+                tbody.innerHTML = '';
+                recentBookings.forEach(b => {
+                    const statusBadgeClass = b.status === 'confirmed' ? 'badge-confirmed' : b.status === 'cancelled' ? 'badge-cancelled' : 'badge-pending';
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>
+                            <strong style="color:var(--adm-gold);font-family:monospace;font-size:0.9rem;">${b.booking_code || 'VARN-PENDING'}</strong>
+                            <div style="font-size:0.75rem;color:var(--adm-text-dim);">${formatDate(b.created_at)}</div>
+                        </td>
+                        <td>
+                            <div style="font-weight:600;color:#fff;">${b.guest_name || 'Guest'}</div>
+                            <div style="font-size:0.75rem;color:var(--adm-text-muted);">${b.guest_phone || ''}</div>
+                        </td>
+                        <td>
+                            <div style="font-weight:500;">${b.room_title || 'Deluxe Room'}</div>
+                            <div style="font-size:0.75rem;color:var(--adm-gold);">${formatINR(b.total_price)}</div>
+                        </td>
+                        <td>
+                            <div style="font-size:0.8rem;">${formatDate(b.check_in)} &rarr; ${formatDate(b.check_out)}</div>
+                            <div style="font-size:0.75rem;color:var(--adm-text-dim);">${b.guests_count || 1} Guests</div>
+                        </td>
+                        <td>
+                            <span class="status-badge ${statusBadgeClass}">${b.status.toUpperCase()}</span>
+                        </td>
+                        <td>
+                            <select class="form-control" style="font-size:0.75rem;padding:0.3rem 0.5rem;width:120px;" onchange="changeStatus(${b.id}, this.value)">
+                                <option value="pending" ${b.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                <option value="confirmed" ${b.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
+                                <option value="cancelled" ${b.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-adm-danger btn-adm-sm" onclick="removeBooking(${b.id})">Delete</button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            // 3. Render Recent Messages (top 4)
+            const msgContainer = document.getElementById('recentMessagesContainer');
+            const recentMsgs = messages.slice(0, 4);
+
+            if (recentMsgs.length === 0) {
+                msgContainer.innerHTML = '<div style="text-align:center;color:var(--adm-text-muted);padding:1.5rem;">No customer inquiries received yet.</div>';
+            } else {
+                msgContainer.innerHTML = '';
+                recentMsgs.forEach(m => {
+                    const card = document.createElement('div');
+                    card.style.cssText = 'background:var(--adm-surface-light);border:1px solid var(--adm-border);border-radius:8px;padding:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;';
+                    const cleanPhone = (m.phone || '').replace(/[^0-9]/g, '');
+                    card.innerHTML = `
+                        <div style="flex:1;min-width:260px;">
+                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.35rem;">
+                                <strong style="color:#fff;font-size:0.95rem;">${m.name}</strong>
+                                <span class="status-badge ${m.status === 'unread' ? 'badge-pending' : 'badge-confirmed'}">${m.status.toUpperCase()}</span>
+                                <span style="font-size:0.75rem;color:var(--adm-text-dim);">${formatDate(m.created_at)}</span>
+                            </div>
+                            <div style="font-size:0.8rem;color:var(--adm-gold);margin-bottom:0.5rem;">
+                                ${m.subject ? `Subject: ${m.subject}` : ''} • Phone: ${m.phone || 'N/A'} • Email: ${m.email || 'N/A'}
+                            </div>
+                            <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.5;">${m.message || ''}</p>
+                        </div>
+                        <div style="display:flex;gap:0.5rem;align-items:center;">
+                            ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(m.name)},%20thank%20you%20for%20contacting%20Hotel%20Varn%20Inn." target="_blank" class="btn btn-adm-gold btn-adm-sm">WhatsApp Reply 💬</a>` : ''}
+                            <button class="btn btn-adm-danger btn-adm-sm" onclick="removeMsg(${m.id})">Delete</button>
+                        </div>
+                    `;
+                    msgContainer.appendChild(card);
+                });
+            }
+        });
+
+        function changeStatus(id, newStatus) {
+            HotelStore.updateBookingStatus(id, newStatus);
+            showAdminToast(`Booking status updated to ${newStatus.toUpperCase()}`);
+            setTimeout(() => window.location.reload(), 300);
+        }
+
+        function removeBooking(id) {
+            if (confirm('Are you sure you want to delete this booking record?')) {
+                HotelStore.deleteBooking(id);
+                showAdminToast('Booking removed successfully');
+                setTimeout(() => window.location.reload(), 300);
+            }
+        }
+
+        function removeMsg(id) {
+            if (confirm('Delete this inquiry?')) {
+                HotelStore.deleteMessage(id);
+                showAdminToast('Message removed');
+                setTimeout(() => window.location.reload(), 300);
+            }
+        }
+    </script>
+</body>
+</html>

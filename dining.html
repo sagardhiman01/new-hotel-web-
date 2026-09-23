@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Lounge & Dining | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-badge">
+                <span class="top-bar-dot"></span>
+                <span data-bind="banner_status">OPENING SOON &bull; BOOKING OPEN NOW</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN NAV -->
+    <header class="main-header">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand-logo">
+                <svg class="brand-crest" viewBox="0 0 80 24" width="58" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 2 L43 9 L51 9 L45 14 L47 21 L40 17 L33 21 L35 14 L29 9 L37 9 Z" fill="url(#crestGoldDining)" filter="drop-shadow(0 0 3px rgba(255,200,87,0.7))"/>
+                    <path d="M28 15 C20 11, 10 18, 2 15 C8 11, 18 10, 24 13" stroke="url(#crestGoldDining)" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M52 15 C60 11, 70 18, 78 15 C72 11, 62 10, 56 13" stroke="url(#crestGoldDining)" stroke-width="1.4" stroke-linecap="round"/>
+                    <circle cx="40" cy="13" r="5.5" stroke="url(#crestGoldDining)" stroke-width="1.2" fill="#080c16"/>
+                    <text x="40" y="16" font-family="'Cinzel', serif" font-size="6.5" font-weight="700" fill="url(#crestGoldDining)" text-anchor="middle">V</text>
+                    <defs>
+                        <linearGradient id="crestGoldDining" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff5d6"/>
+                            <stop offset="50%" stop-color="#ffc857"/>
+                            <stop offset="100%" stop-color="#d48710"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-name">HOTEL VARN INN</div>
+                <div class="brand-byline" data-bind="hotel_brand">BY EPSILON • ROORKEE</div>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Suites & Sanctuaries</a>
+                <a href="dining.html" class="nav-link active">Sky Lounge & Dining</a>
+                <a href="events.html" class="nav-link">Banquets & Celebrations</a>
+                <a href="amenities.html" class="nav-link">Amenities</a>
+                <a href="gallery.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button type="button" class="btn btn-gold btn-sm nav-reserve-btn" data-open-booking>Reserve A Suite</button>
+                <button type="button" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section" style="min-height:55vh;">
+        <div class="hero-bg-media">
+            <img src="assets/images/rooftop.jpg" alt="Sky Lounge Rooftop at Sunset">
+        </div>
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-content">
+            <span class="section-tag">Gastronomic Artistry</span>
+            <h1 class="hero-title">
+                Sky Lounge &amp; <span class="font-italic text-gold-gradient">Fine Dining</span>
+            </h1>
+            <p class="hero-subtitle">
+                Starlit rooftop horizons, live charcoal tandoor delicacies, and bespoke botanical elixirs crafted by master culinary artisans.
+            </p>
+        </div>
+    </section>
+
+    <!-- EDITORIAL HIGHLIGHT -->
+    <section class="editorial-section">
+        <div class="container">
+            <div class="editorial-grid">
+                <div class="editorial-image-frame">
+                    <img src="assets/images/dining.jpg" alt="Gourmet Plating">
+                </div>
+                <div class="editorial-content">
+                    <span class="section-tag">Rooftop Experience</span>
+                    <h2>Dine Under The Stars at <span class="font-italic text-gold-gradient">The Sky Lounge</span></h2>
+                    <p>
+                        Elevated above Roorkee's skyline, our signature Open Rooftop Sky Lounge transforms dusk into a theater of golden lights, soothing acoustic melodies, and aromas of royal dum cooking.
+                    </p>
+                    <p>
+                        From slow-cooked Awadhi Gosht Nihari to handcrafted elderflower and 24k gold leaf mocktails, every dish celebrates regional heritage fused with international finesse.
+                    </p>
+                    <div style="background:var(--gold-light);border:1px solid var(--gold-border);padding:1.25rem 1.5rem;border-radius:8px;display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;">
+                        <div>
+                            <div style="font-size:0.75rem;text-transform:uppercase;color:var(--gold-dark);letter-spacing:0.15em;font-weight:700;">Sky Lounge Hours</div>
+                            <strong style="color:var(--text-primary);font-size:1rem;" data-bind="sky_lounge_hours">5:00 PM – 11:30 PM Daily</strong>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem;text-transform:uppercase;color:var(--gold-dark);letter-spacing:0.15em;font-weight:700;">Restaurant Hours</div>
+                            <strong style="color:var(--text-primary);font-size:1rem;" data-bind="restaurant_hours">7:00 AM – 11:00 PM Daily</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROOFTOP DINING EXPERIENCE PILLARS -->
+    <section style="padding:4rem 0;background:var(--bg-surface-elevated);border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1.5rem;text-align:center;">
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:2rem 1.5rem;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--text-primary);margin-bottom:0.4rem;">Live Charcoal Tandoor</h3>
+                    <p style="font-size:0.84rem;color:var(--text-secondary);line-height:1.6;">Authentic clay ovens roasting succulent kebabs and artisanal flatbreads right before your eyes.</p>
+                </div>
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:2rem 1.5rem;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M12 2v2M4.93 4.93l1.41 1.41M2 12h2M20 12h2M17.66 6.34l1.41-1.41M12 8a4 4 0 0 0-4 4v3h8v-3a4 4 0 0 0-4-4zM2 18h20M4 22h16"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--text-primary);margin-bottom:0.4rem;">Sunset Horizon Vistas</h3>
+                    <p style="font-size:0.84rem;color:var(--text-secondary);line-height:1.6;">Unobstructed 360-degree views of Haridwar Road skyline bathed in golden evening hues.</p>
+                </div>
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:2rem 1.5rem;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13C4 7 11 3 11 3s7 4 7 10a7 7 0 0 1-7 7zM11 3v17"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--text-primary);margin-bottom:0.4rem;">Pure Vegetarian Kitchen</h3>
+                    <p style="font-size:0.84rem;color:var(--text-secondary);line-height:1.6;">Dedicated separate preparation stations and culinary teams for pure vegetarian and Jain dining.</p>
+                </div>
+                <div style="background:#ffffff;border:1px solid var(--gold-border);border-radius:10px;padding:2rem 1.5rem;box-shadow:var(--shadow-subtle);">
+                    <div class="luxury-icon-box" style="margin-bottom:0.6rem;">
+                        <svg class="luxury-icon-svg" viewBox="0 0 24 24"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14zM5 3h14"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-serif);font-size:1.2rem;color:var(--text-primary);margin-bottom:0.4rem;">Botanical Mocktail Bar</h3>
+                    <p style="font-size:0.84rem;color:var(--text-secondary);line-height:1.6;">Artisanal elixirs muddled with cold-pressed fruits, garden herbs, and edible 24K gold foil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURATED MENU -->
+    <section style="padding:5.5rem 0;background:#ffffff;border-bottom:1px solid var(--border-subtle);">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:3.5rem;">
+                <span class="section-tag">Epicurean Selections</span>
+                <h2 class="section-title">Curated <span class="font-italic text-gold-gradient">A La Carte Menu</span></h2>
+                <p class="section-subtitle">Fresh seasonal produce, slow-charcoal clay tandoor, and signature royal infusions.</p>
+            </div>
+
+            <div style="max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:2.5rem;" id="diningMenuContainer">
+                <!-- Fallback content (Dynamic Hydrator overrides from HotelStore) -->
+                <div style="background:var(--bg-card);border:1px solid var(--gold-border);border-radius:10px;padding:2rem;box-shadow:var(--shadow-subtle);">
+                    <h3 class="font-serif" style="font-size:1.5rem;color:var(--gold-dark);margin-bottom:1.25rem;border-bottom:1px solid var(--gold-border);padding-bottom:0.6rem;">Signature Starters</h3>
+                    <div class="dining-menu-grid">
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span><span class="dietary-symbol nonveg"></span>Bhatti Da Murgh Tikka <span style="color:var(--gold-dark);font-size:0.7rem;">★ Chef Special</span></span>
+                                <span class="text-gold">₹495</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Tender chicken morsels marinated in Kashmiri chili, crushed coriander, and roasted in clay tandoor.</p>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span><span class="dietary-symbol veg"></span>Truffle &amp; Cheese Dahi Ke Kebab</span>
+                                <span class="text-gold">₹425</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Silky hung yogurt infused with melted aged cheese and a hint of truffle oil, golden seared.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-card);border:1px solid var(--gold-border);border-radius:10px;padding:2rem;box-shadow:var(--shadow-subtle);">
+                    <h3 class="font-serif" style="font-size:1.5rem;color:var(--gold-dark);margin-bottom:1.25rem;border-bottom:1px solid var(--gold-border);padding-bottom:0.6rem;">Royal Main Course</h3>
+                    <div class="dining-menu-grid">
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span><span class="dietary-symbol veg"></span>Varn Inn Dal Makhani <span style="color:var(--gold-dark);font-size:0.7rem;">★ 24-Hour Simmered</span></span>
+                                <span class="text-gold">₹385</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Slow-cooked black lentils simmered for 24 hours with churned white butter and vine-ripened tomatoes.</p>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span><span class="dietary-symbol nonveg"></span>Awadhi Dum Gosht Nihari</span>
+                                <span class="text-gold">₹645</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Melt-in-mouth mutton shanks braised overnight in aromatic Lucknowi potli spices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background:var(--bg-card);border:1px solid var(--gold-border);border-radius:10px;padding:2rem;box-shadow:var(--shadow-subtle);">
+                    <h3 class="font-serif" style="font-size:1.5rem;color:var(--gold-dark);margin-bottom:1.25rem;border-bottom:1px solid var(--gold-border);padding-bottom:0.6rem;">Sky Lounge Elixirs &amp; Mocktails</h3>
+                    <div class="dining-menu-grid">
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span>Roorkee Sunset Gold <span style="color:var(--gold-dark);font-size:0.7rem;">★ 24K Gold Rim</span></span>
+                                <span class="text-gold">₹295</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Passion fruit, smoked rosemary sprig, sparkling tonic, and 24k gold leaf rim.</p>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-weight:600;color:var(--text-primary);font-size:0.95rem;">
+                                <span>Epsilon Botanical Elixir</span>
+                                <span class="text-gold">₹450</span>
+                            </div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.25rem;">Wild elderflower, cucumber ribbons, pink peppercorns, and Mediterranean tonic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVE A TABLE CTA STRIP -->
+    <section style="padding:4rem 0;background:linear-gradient(135deg, #181c24 0%, #252c38 100%);color:#ffffff;border-top:1px solid var(--gold-border);">
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+            <div>
+                <span style="color:var(--gold-bright);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;">Exclusive Rooftop Hospitality</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.65rem;color:#ffffff;margin-top:0.25rem;">Reserve Your Starlit Sky Lounge Table</h3>
+                <p style="color:#cbd5e1;font-size:0.9rem;margin-top:0.35rem;">Celebrate birthdays, anniversaries, and family dinners under starry Roorkee skies.</p>
+            </div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <a href="tel:+917534999777" class="btn btn-gold" style="padding:0.85rem 1.6rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                    <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Table Desk: +91 7534999777
+                </a>
+                <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn,%20I%20would%20like%20to%20reserve%20a%20table%20at%20the%20Sky%20Lounge" target="_blank" rel="noopener" class="btn btn-outline-gold" style="background:transparent;color:#ffffff;border-color:rgba(255,255,255,0.4);padding:0.85rem 1.6rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                    <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color:#25d366;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                    WhatsApp Table Booking
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>HOTEL VARN INN</h3>
+                    <div style="font-size:0.75rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;">BY EPSILON &bull; ROORKEE</div>
+                    <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:1.5rem;">
+                        Roorkee's benchmark for 5-star luxury accommodations, royal celebrations, and elevated culinary moments on NH-58 Haridwar Road.
+                    </p>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9;">
+                        <div style="margin-bottom:0.5rem;display:flex;align-items:flex-start;gap:0.4rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="2" style="flex-shrink:0;margin-top:4px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                            <span>NH-58, Haridwar Road, near Vedandam Banquet Hall, Sherpur, Roorkee, Uttarakhand 247667</span>
+                        </div>
+                        <a href="tel:+917534999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 7534999777
+                        </a>
+                        <a href="tel:+918937999777" style="color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">
+                            <svg class="anim-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            +91 8937999777
+                        </a>
+                        <a href="https://wa.me/917534999777" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;display:flex;align-items:center;gap:0.4rem;">
+                            <svg class="anim-icon icon-pulse" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                            WhatsApp Concierge
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Accommodations</h4>
+                    <ul class="footer-links">
+                        <li><a href="rooms.html" class="footer-link">Deluxe Executive Room</a></li>
+                        <li><a href="rooms.html" class="footer-link">Super Deluxe Luxury Suite</a></li>
+                        <li><a href="rooms.html" class="footer-link">Presidential Royal Suite</a></li>
+                        <li><a href="amenities.html" class="footer-link">All Hotel Amenities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="events.html" class="footer-link">The Grand Varn Banquet</a></li>
+                        <li><a href="dining.html" class="footer-link">Sky Lounge Rooftop</a></li>
+                        <li><a href="events.html" class="footer-link">Executive Conference Center</a></li>
+                        <li><a href="amenities.html" class="footer-link">Pool Party Zone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="gallery.html" class="footer-link">Photo Portfolio</a></li>
+                        <li><a href="contact.html" class="footer-link">Location &amp; Directions</a></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Hotel Varn Inn By Epsilon. All rights reserved.</div>
+                <div style="font-size:0.8rem;color:var(--text-muted);">NH-58 Haridwar Road, Sherpur, Roorkee, Uttarakhand 247667</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLOBAL BOOKING MODAL -->
+    <div class="modal-backdrop" id="globalBookingModal">
+        <div class="modal-container">
+            <button type="button" class="modal-close-btn">&times;</button>
+            <div style="text-align:center;margin-bottom:1.5rem;">
+                <span class="section-tag">Direct VIP Reservation</span>
+                <h3 style="font-family:var(--font-serif);font-size:1.8rem;color:var(--text-primary);margin-top:0.25rem;">Reserve Your Sanctuary</h3>
+                <p style="font-size:0.85rem;color:var(--text-secondary);">Direct booking best rate guarantee & front desk assistance.</p>
+            </div>
+            <form id="globalBookingForm">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Full Name *</label><input type="text" name="guest_name" class="form-control" placeholder="Your Full Name" required></div>
+                    <div><label class="form-label">Phone *</label><input type="tel" name="guest_phone" class="form-control" placeholder="+91 98765 43210" required></div>
+                </div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Email</label><input type="email" name="guest_email" class="form-control" placeholder="name@example.com" required></div>
+                <div style="margin-bottom:1rem;"><label class="form-label">Select Room</label><select name="room_id" id="modalRoomSelect" class="form-control"><option value="1">Deluxe Executive Room (₹2,799 / night)</option><option value="2" selected>Super Deluxe Luxury Suite (₹4,499 / night)</option><option value="3">Presidential Royal Suite (₹7,499 / night)</option></select></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div><label class="form-label">Check-In</label><input type="date" name="check_in" class="form-control" required></div>
+                    <div><label class="form-label">Check-Out</label><input type="date" name="check_out" class="form-control" required></div>
+                </div>
+                <button type="submit" class="btn btn-gold" style="width:100%;margin-top:0.5rem;">Confirm Reservation Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917534999777?text=Hello%20Hotel%20Varn%20Inn" class="floating-whatsapp" data-bind="whatsapp_link" target="_blank" rel="noopener" title="WhatsApp Concierge">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.06 7.64C8.87 7.64 8.56 7.71 8.31 7.98C8.06 8.26 7.34 8.93 7.34 10.3C7.34 11.67 8.33 13 8.47 13.19C8.61 13.38 10.42 16.17 13.18 17.37C15.48 18.36 15.95 18.16 16.44 18.12C16.94 18.07 18.03 17.47 18.26 16.82C18.49 16.18 18.49 15.63 18.42 15.51C18.35 15.4 18.16 15.33 17.88 15.19C17.6 15.05 16.22 14.37 15.97 14.28C15.71 14.19 15.53 14.14 15.34 14.42C15.15 14.7 14.62 15.33 14.46 15.51C14.3 15.7 14.14 15.72 13.86 15.58C13.58 15.44 12.67 15.14 11.6 14.19C10.77 13.45 10.21 12.54 10.05 12.26C9.89 11.98 10.03 11.83 10.17 11.69C10.3 11.56 10.46 11.35 10.6 11.19C10.74 11.03 10.79 10.91 10.88 10.73C10.97 10.54 10.93 10.38 10.86 10.24C10.79 10.1 10.23 8.74 10 8.18C9.77 7.64 9.54 7.71 9.37 7.71C9.21 7.71 9.06 7.64 9.06 7.64Z"/>
+        </svg>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+</html>
+
+

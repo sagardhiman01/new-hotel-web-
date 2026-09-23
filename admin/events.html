@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banquets & Events Management | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">Banquets, Ballrooms & Conference Centers</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Manage banquet capacities (600+ guests, 6,500 sq.ft), conference halls, and event packages.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-adm-gold btn-adm-sm" onclick="openEventModal()">
+                    + Add Event Venue / Hall
+                </button>
+            </div>
+
+            <!-- Venues Grid -->
+            <div id="eventsContainer" class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));gap:1.5rem;">
+                <!-- Populated dynamically -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Event Modal -->
+    <div id="eventModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+        <div style="background:var(--adm-surface);border:1px solid var(--adm-border-gold);border-radius:12px;width:100%;max-width:650px;padding:2rem;box-shadow:0 25px 60px rgba(0,0,0,0.8);max-height:90vh;overflow-y:auto;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;border-bottom:1px solid var(--adm-border);padding-bottom:1rem;">
+                <h3 class="font-heading" id="eventModalTitle" style="color:var(--adm-gold);font-size:1.2rem;">Add Event Venue</h3>
+                <button type="button" onclick="closeEventModal()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+            </div>
+
+            <form id="eventForm">
+                <input type="hidden" id="event_id">
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Venue Name *</label>
+                    <input type="text" id="event_name" class="form-control" required placeholder="e.g. The Grand Varn Banquet Hall">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Subtitle / Description Line</label>
+                    <input type="text" id="event_subtitle" class="form-control" placeholder="Roorkee’s Most Prestigious Celebration Destination">
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Theater Capacity</label>
+                        <input type="number" id="event_theater" class="form-control" placeholder="600">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Banquet Capacity</label>
+                        <input type="number" id="event_banquet" class="form-control" placeholder="400">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Floor Area (Sq.Ft)</label>
+                        <input type="number" id="event_sqft" class="form-control" placeholder="6500">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" id="event_image" class="form-control" placeholder="assets/images/banquet.jpg">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Key Highlights (Comma separated)</label>
+                    <input type="text" id="event_features" class="form-control" placeholder="Crystal Chandeliers, Pillarless Hall, Dedicated Dining, Valet Parking">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <label class="form-label">Full Venue Description</label>
+                    <textarea id="event_desc" class="form-control" rows="3" placeholder="A breathtaking pillarless ballroom..."></textarea>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                    <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="closeEventModal()">Cancel</button>
+                    <button type="submit" class="btn btn-adm-gold btn-adm-sm">Save Venue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('events', 'Banquets & Events Management');
+            renderEvents();
+
+            document.getElementById('eventForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                saveEventData();
+            });
+        });
+
+        function renderEvents() {
+            const events = HotelStore.getEvents();
+            const container = document.getElementById('eventsContainer');
+            container.innerHTML = '';
+
+            events.forEach(e => {
+                const card = document.createElement('div');
+                card.className = 'admin-card';
+                card.style.cssText = 'display:flex;flex-direction:column;justify-content:space-between;';
+
+                const featuresHtml = (e.features || []).map(f => `<span class="status-badge" style="background:rgba(212,175,55,0.1);color:var(--adm-gold);border:1px solid var(--adm-border-gold);margin-right:0.35rem;margin-bottom:0.35rem;display:inline-block;">${f}</span>`).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <div style="position:relative;height:180px;margin:-1.5rem -1.5rem 1.25rem;overflow:hidden;border-radius:12px 12px 0 0;">
+                            <img src="../${e.image_url || 'assets/images/banquet.jpg'}" alt="" style="width:100%;height:100%;object-fit:cover;">
+                            <span class="status-badge badge-confirmed" style="position:absolute;bottom:0.75rem;left:0.75rem;">${e.size_sqft || 5000} SQ.FT</span>
+                        </div>
+                        <h3 class="font-heading" style="color:#fff;font-size:1.15rem;margin-bottom:0.25rem;">${e.name}</h3>
+                        <p style="color:var(--adm-gold);font-size:0.8rem;margin-bottom:0.75rem;">${e.subtitle || ''}</p>
+                        <div style="font-size:0.85rem;color:var(--adm-text-muted);display:flex;gap:1rem;margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid var(--adm-border);">
+                            <span>👥 Theater: <strong>${e.capacity_theater || '—'}</strong></span>
+                            <span>🍽️ Banquet: <strong>${e.capacity_banquet || '—'}</strong></span>
+                        </div>
+                        <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.5;margin-bottom:1rem;">${e.description || ''}</p>
+                        <div style="margin-bottom:1rem;">${featuresHtml}</div>
+                    </div>
+                    <div style="display:flex;justify-content:flex-end;gap:0.5rem;border-top:1px solid var(--adm-border);padding-top:1rem;">
+                        <button class="btn btn-adm-secondary btn-adm-sm" onclick='editEvent(${JSON.stringify(e)})'>Edit Venue</button>
+                        <button class="btn btn-adm-danger btn-adm-sm" onclick="deleteEvent(${e.id})">Delete</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openEventModal(event = null) {
+            document.getElementById('eventModalTitle').textContent = event ? 'Edit Event Venue' : 'Add Event Venue';
+            document.getElementById('event_id').value = event ? event.id : '';
+            document.getElementById('event_name').value = event ? event.name : '';
+            document.getElementById('event_subtitle').value = event ? (event.subtitle || '') : '';
+            document.getElementById('event_theater').value = event ? (event.capacity_theater || '') : 500;
+            document.getElementById('event_banquet').value = event ? (event.capacity_banquet || '') : 350;
+            document.getElementById('event_sqft').value = event ? (event.size_sqft || '') : 6000;
+            document.getElementById('event_image').value = event ? (event.image_url || '') : 'assets/images/banquet.jpg';
+            document.getElementById('event_features').value = event ? (Array.isArray(event.features) ? event.features.join(', ') : '') : 'Crystal Chandeliers, Pillarless Architecture, Dedicated Dining Hall, Valet Parking';
+            document.getElementById('event_desc').value = event ? (event.description || '') : '';
+            document.getElementById('eventModal').style.display = 'flex';
+        }
+
+        function closeEventModal() {
+            document.getElementById('eventModal').style.display = 'none';
+        }
+
+        function editEvent(event) {
+            openEventModal(event);
+        }
+
+        function deleteEvent(id) {
+            if (confirm('Delete this banquet venue?')) {
+                HotelStore.deleteEvent(id);
+                showAdminToast('Venue removed');
+                renderEvents();
+            }
+        }
+
+        function saveEventData() {
+            const id = document.getElementById('event_id').value;
+            const featuresStr = document.getElementById('event_features').value;
+            const featuresArr = featuresStr.split(',').map(s => s.trim()).filter(Boolean);
+
+            const eventData = {
+                name: document.getElementById('event_name').value.trim(),
+                subtitle: document.getElementById('event_subtitle').value.trim(),
+                capacity_theater: Number(document.getElementById('event_theater').value) || 0,
+                capacity_banquet: Number(document.getElementById('event_banquet').value) || 0,
+                size_sqft: Number(document.getElementById('event_sqft').value) || 0,
+                image_url: document.getElementById('event_image').value.trim() || 'assets/images/banquet.jpg',
+                features: featuresArr,
+                description: document.getElementById('event_desc').value.trim()
+            };
+
+            if (id) eventData.id = Number(id);
+
+            HotelStore.saveEvent(eventData);
+            showAdminToast('Venue details saved!');
+            closeEventModal();
+            renderEvents();
+        }
+    </script>
+</body>
+</html>

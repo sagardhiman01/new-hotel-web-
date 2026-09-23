@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Suites Management | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">Accommodations & Suites</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Add, edit, change pricing, and customize room suites displayed on the guest website.
+                    </p>
+                </div>
+                <button type="button" class="btn btn-adm-gold btn-adm-sm" onclick="openRoomModal()">
+                    + Add New Room / Suite
+                </button>
+            </div>
+
+            <!-- Rooms Table -->
+            <div class="admin-card">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Room Name & Category</th>
+                                <th>Bed & Capacity</th>
+                                <th>Pricing</th>
+                                <th>Badge</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roomsTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Room Edit/Add Modal -->
+    <div id="roomModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;overflow-y:auto;">
+        <div style="background:var(--adm-surface);border:1px solid var(--adm-border-gold);border-radius:12px;width:100%;max-width:700px;padding:2rem;box-shadow:0 25px 60px rgba(0,0,0,0.8);max-height:90vh;overflow-y:auto;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;border-bottom:1px solid var(--adm-border);padding-bottom:1rem;">
+                <h3 class="font-heading" id="modalTitle" style="color:var(--adm-gold);font-size:1.25rem;">Add Room / Suite</h3>
+                <button type="button" onclick="closeRoomModal()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+            </div>
+
+            <form id="roomForm">
+                <input type="hidden" id="room_id">
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Room Title *</label>
+                        <input type="text" id="room_title" class="form-control" placeholder="e.g. Deluxe Executive Room" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select id="room_category" class="form-control">
+                            <option value="Deluxe">Deluxe</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Presidential">Presidential</option>
+                            <option value="Executive">Executive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Regular Price (₹) *</label>
+                        <input type="number" id="room_price" class="form-control" placeholder="3499" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Discount Price (₹)</label>
+                        <input type="number" id="room_discount" class="form-control" placeholder="2799">
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Bed Configuration</label>
+                        <input type="text" id="room_bed" class="form-control" placeholder="King Bed or Twin Beds">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Adults Capacity</label>
+                        <input type="number" id="room_adults" class="form-control" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Size (Sq.Ft)</label>
+                        <input type="number" id="room_sqft" class="form-control" placeholder="380">
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                    <div class="form-group">
+                        <label class="form-label">View Type</label>
+                        <input type="text" id="room_view" class="form-control" placeholder="City & Skyline View">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Badge (e.g. Most Popular)</label>
+                        <input type="text" id="room_badge" class="form-control" placeholder="Most Popular">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" id="room_image" class="form-control" placeholder="assets/images/room-deluxe.jpg">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Amenities (Comma separated)</label>
+                    <input type="text" id="room_amenities" class="form-control" placeholder="High Speed Wi-Fi, Smart TV, Rain Shower, Mini Bar">
+                </div>
+
+                <div class="form-group" style="margin-bottom:1.5rem;">
+                    <label class="form-label">Short Description</label>
+                    <textarea id="room_short_desc" class="form-control" rows="3" placeholder="Brief enticing overview..."></textarea>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;">
+                    <button type="button" class="btn btn-adm-secondary btn-adm-sm" onclick="closeRoomModal()">Cancel</button>
+                    <button type="submit" class="btn btn-adm-gold btn-adm-sm">Save Room Suite</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('rooms', 'Rooms & Suites Management');
+            renderRoomsTable();
+
+            document.getElementById('roomForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                saveRoomData();
+            });
+        });
+
+        function renderRoomsTable() {
+            const rooms = HotelStore.getRooms();
+            const tbody = document.getElementById('roomsTableBody');
+            tbody.innerHTML = '';
+
+            rooms.forEach(r => {
+                const tr = document.createElement('tr');
+                const priceDisplay = r.discount_price 
+                    ? `<span style="text-decoration:line-through;color:var(--adm-text-dim);margin-right:0.5rem;">${formatINR(r.price_per_night)}</span><strong style="color:var(--adm-gold);">${formatINR(r.discount_price)}</strong>` 
+                    : `<strong style="color:var(--adm-gold);">${formatINR(r.price_per_night)}</strong>`;
+
+                tr.innerHTML = `
+                    <td style="width:90px;">
+                        <img src="../${r.image_url || 'assets/images/room-deluxe.jpg'}" alt="" style="width:80px;height:55px;object-fit:cover;border-radius:6px;border:1px solid var(--adm-border);">
+                    </td>
+                    <td>
+                        <div style="font-weight:700;color:#fff;font-size:0.95rem;">${r.title}</div>
+                        <div style="font-size:0.75rem;color:var(--adm-text-muted);">${r.category || 'Deluxe'} • ${r.view_type || 'View'}</div>
+                    </td>
+                    <td>
+                        <div>${r.bed_type || 'King Bed'}</div>
+                        <div style="font-size:0.75rem;color:var(--adm-text-dim);">${r.capacity_adults || 2} Adults • ${r.size_sqft || 380} sq.ft</div>
+                    </td>
+                    <td>${priceDisplay} / night</td>
+                    <td>
+                        ${r.badge ? `<span class="status-badge badge-confirmed">${r.badge}</span>` : '—'}
+                    </td>
+                    <td>
+                        <div style="display:flex;gap:0.5rem;">
+                            <button class="btn btn-adm-secondary btn-adm-sm" onclick="editRoom(${r.id})">Edit</button>
+                            <button class="btn btn-adm-danger btn-adm-sm" onclick="deleteRoom(${r.id})">Delete</button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function openRoomModal(room = null) {
+            const modal = document.getElementById('roomModal');
+            document.getElementById('modalTitle').textContent = room ? 'Edit Room Suite' : 'Add New Room / Suite';
+            document.getElementById('room_id').value = room ? room.id : '';
+            document.getElementById('room_title').value = room ? room.title : '';
+            document.getElementById('room_category').value = room ? room.category : 'Deluxe';
+            document.getElementById('room_price').value = room ? room.price_per_night : '';
+            document.getElementById('room_discount').value = room ? (room.discount_price || '') : '';
+            document.getElementById('room_bed').value = room ? (room.bed_type || '') : 'King Bed';
+            document.getElementById('room_adults').value = room ? (room.capacity_adults || 2) : 2;
+            document.getElementById('room_sqft').value = room ? (room.size_sqft || '') : 400;
+            document.getElementById('room_view').value = room ? (room.view_type || '') : 'City View';
+            document.getElementById('room_badge').value = room ? (room.badge || '') : '';
+            document.getElementById('room_image').value = room ? (room.image_url || '') : 'assets/images/room-deluxe.jpg';
+            document.getElementById('room_amenities').value = room ? (Array.isArray(room.amenities) ? room.amenities.join(', ') : '') : 'High Speed Wi-Fi, Smart 55" 4K TV, Rain Shower, 24/7 Room Service';
+            document.getElementById('room_short_desc').value = room ? (room.short_desc || '') : '';
+
+            modal.style.display = 'flex';
+        }
+
+        function closeRoomModal() {
+            document.getElementById('roomModal').style.display = 'none';
+        }
+
+        function editRoom(id) {
+            const room = HotelStore.getRooms().find(r => r.id === Number(id));
+            if (room) openRoomModal(room);
+        }
+
+        function deleteRoom(id) {
+            if (confirm('Delete this room suite? This will remove it from the live website.')) {
+                HotelStore.deleteRoom(id);
+                showAdminToast('Room removed successfully');
+                renderRoomsTable();
+            }
+        }
+
+        function saveRoomData() {
+            const id = document.getElementById('room_id').value;
+            const amenitiesStr = document.getElementById('room_amenities').value;
+            const amenitiesArr = amenitiesStr.split(',').map(s => s.trim()).filter(Boolean);
+
+            const roomData = {
+                title: document.getElementById('room_title').value.trim(),
+                category: document.getElementById('room_category').value,
+                price_per_night: Number(document.getElementById('room_price').value),
+                discount_price: document.getElementById('room_discount').value ? Number(document.getElementById('room_discount').value) : null,
+                bed_type: document.getElementById('room_bed').value.trim(),
+                capacity_adults: Number(document.getElementById('room_adults').value) || 2,
+                size_sqft: Number(document.getElementById('room_sqft').value) || 400,
+                view_type: document.getElementById('room_view').value.trim(),
+                badge: document.getElementById('room_badge').value.trim(),
+                image_url: document.getElementById('room_image').value.trim() || 'assets/images/room-deluxe.jpg',
+                amenities: amenitiesArr,
+                short_desc: document.getElementById('room_short_desc').value.trim()
+            };
+
+            if (id) roomData.id = Number(id);
+
+            HotelStore.saveRoom(roomData);
+            showAdminToast('Room saved! Live website updated.');
+            closeRoomModal();
+            renderRoomsTable();
+        }
+    </script>
+</body>
+</html>

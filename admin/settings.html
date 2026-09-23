@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Customizer (A to Z) | Hotel Varn Inn By Epsilon</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar placeholder -->
+    <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-topbar" id="adminTopbar"></header>
+
+        <div class="admin-content">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+                <div>
+                    <h2 class="font-heading" style="font-size:1.4rem;color:#fff;">A-to-Z Global Website Settings</h2>
+                    <p style="font-size:0.85rem;color:var(--adm-text-muted);">
+                        Every modification saved here updates instantly on the live guest website.
+                    </p>
+                </div>
+                <div style="display:flex;gap:0.75rem;">
+                    <button type="button" class="btn btn-adm-danger btn-adm-sm" id="resetDefaultsBtn">Reset to Defaults ↺</button>
+                    <button type="submit" form="settingsForm" class="btn btn-adm-gold btn-adm-sm">Save All Changes 💾</button>
+                </div>
+            </div>
+
+            <form id="settingsForm">
+
+                <!-- Section 1: Identity & Branding -->
+                <div class="admin-card" style="margin-bottom:1.75rem;">
+                    <h3 class="font-heading" style="font-size:1.1rem;color:var(--adm-gold);margin-bottom:1.25rem;">1. Brand Identity & Status Banner</h3>
+                    <div class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;">
+                        <div class="form-group">
+                            <label class="form-label">Hotel Name</label>
+                            <input type="text" id="hotel_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Brand Subtitle / Group</label>
+                            <input type="text" id="hotel_brand" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Top Banner Status (e.g. Opening Soon)</label>
+                            <input type="text" id="banner_status" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tagline</label>
+                            <input type="text" id="tagline" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Contact & Direct Hotlines -->
+                <div class="admin-card" style="margin-bottom:1.75rem;">
+                    <h3 class="font-heading" style="font-size:1.1rem;color:var(--adm-gold);margin-bottom:1.25rem;">2. Direct Phone Lines & WhatsApp</h3>
+                    <div class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;">
+                        <div class="form-group">
+                            <label class="form-label">Primary Hotline (Phone 1)</label>
+                            <input type="text" id="phone_1" class="form-control" placeholder="+91 7534999777" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Secondary Hotline (Phone 2)</label>
+                            <input type="text" id="phone_2" class="form-control" placeholder="+91 8937999777">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">WhatsApp Contact Number (No spaces/dashes)</label>
+                            <input type="text" id="whatsapp" class="form-control" placeholder="917534999777">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Official Reservations Email</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Physical Address & Map -->
+                <div class="admin-card" style="margin-bottom:1.75rem;">
+                    <h3 class="font-heading" style="font-size:1.1rem;color:var(--adm-gold);margin-bottom:1.25rem;">3. Hotel Address & Google Map</h3>
+                    <div class="form-group" style="margin-bottom:1.25rem;">
+                        <label class="form-label">Complete Physical Address</label>
+                        <textarea id="address" class="form-control" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Google Maps Embed URL (iframe src)</label>
+                        <input type="text" id="google_maps_url" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Section 4: Hero Content & Operating Hours -->
+                <div class="admin-card" style="margin-bottom:1.75rem;">
+                    <h3 class="font-heading" style="font-size:1.1rem;color:var(--adm-gold);margin-bottom:1.25rem;">4. Hero Headlines & Operating Hours</h3>
+                    <div class="form-group" style="margin-bottom:1.25rem;">
+                        <label class="form-label">Homepage Hero Title</label>
+                        <input type="text" id="hero_title" class="form-control">
+                    </div>
+                    <div class="form-group" style="margin-bottom:1.25rem;">
+                        <label class="form-label">Hero Subtitle Description</label>
+                        <textarea id="hero_subtitle" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="admin-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;">
+                        <div class="form-group">
+                            <label class="form-label">Sky Lounge Operating Hours</label>
+                            <input type="text" id="sky_lounge_hours" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Restaurant Operating Hours</label>
+                            <input type="text" id="restaurant_hours" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Toolbar -->
+                <div style="display:flex;justify-content:flex-end;gap:1rem;margin-top:2rem;">
+                    <button type="submit" class="btn btn-adm-gold" style="padding:0.85rem 2rem;font-size:1rem;">
+                        Save All Website Settings 💾
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminPage('settings', 'Website Customizer (A to Z)');
+
+            const s = HotelStore.getSettings();
+
+            // Populate form fields
+            const fields = [
+                'hotel_name', 'hotel_brand', 'banner_status', 'tagline',
+                'phone_1', 'phone_2', 'whatsapp', 'email',
+                'address', 'google_maps_url', 'hero_title', 'hero_subtitle',
+                'sky_lounge_hours', 'restaurant_hours'
+            ];
+
+            fields.forEach(f => {
+                const el = document.getElementById(f);
+                if (el && s[f] !== undefined) el.value = s[f];
+            });
+
+            // Form Submit
+            document.getElementById('settingsForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newSettings = {};
+                fields.forEach(f => {
+                    const el = document.getElementById(f);
+                    if (el) newSettings[f] = el.value.trim();
+                });
+
+                HotelStore.saveSettings(newSettings);
+                showAdminToast('Website settings saved successfully! All live pages updated.');
+            });
+
+            // Reset to default
+            document.getElementById('resetDefaultsBtn').addEventListener('click', () => {
+                if (confirm('Are you sure you want to reset all site settings to factory defaults?')) {
+                    HotelStore.resetAllData();
+                    showAdminToast('Reset complete. Reloading...');
+                    setTimeout(() => window.location.reload(), 500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
