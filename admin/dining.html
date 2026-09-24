@@ -73,8 +73,8 @@
                     <div class="form-group">
                         <label class="form-label">Dietary Preference</label>
                         <select id="dish_dietary" class="form-control">
-                            <option value="veg">Vegetarian (🌱 Veg)</option>
-                            <option value="non-veg">Non-Vegetarian (🍗 Non-Veg)</option>
+                            <option value="veg">Vegetarian (Veg)</option>
+                            <option value="non-veg">Non-Vegetarian (Non-Veg)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -126,7 +126,7 @@
                     itemsHtml = '<div style="color:var(--adm-text-muted);font-size:0.85rem;padding:1rem;">No items in this category yet.</div>';
                 } else {
                     cat.items.forEach(item => {
-                        const dietaryBadge = item.dietary === 'veg' ? '<span style="color:#10b981;font-size:0.75rem;">🌱 Veg</span>' : '<span style="color:#ef4444;font-size:0.75rem;">🍗 Non-Veg</span>';
+                        const dietaryBadge = item.dietary === 'veg' ? '<span style="color:#10b981;font-size:0.75rem;font-weight:600;">[Veg]</span>' : '<span style="color:#ef4444;font-size:0.75rem;font-weight:600;">[Non-Veg]</span>';
                         const specialBadge = item.is_special ? '<span class="status-badge badge-confirmed" style="font-size:0.7rem;">Chef Signature</span>' : '';
 
                         itemsHtml += `

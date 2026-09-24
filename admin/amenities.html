@@ -52,15 +52,9 @@
                     <input type="text" id="amenity_title" class="form-control" required placeholder="e.g. Open Rooftop Sky Lounge">
                 </div>
 
-                <div style="display:grid;grid-template-columns:1fr 2fr;gap:1rem;margin-bottom:1rem;">
-                    <div class="form-group">
-                        <label class="form-label">Icon Emoji</label>
-                        <input type="text" id="amenity_icon" class="form-control" placeholder="🍸">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Image URL</label>
-                        <input type="text" id="amenity_image" class="form-control" placeholder="assets/images/rooftop.jpg">
-                    </div>
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" id="amenity_image" class="form-control" placeholder="assets/images/rooftop.jpg">
                 </div>
 
                 <div class="form-group" style="margin-bottom:1.5rem;">
@@ -103,7 +97,6 @@
                     <div>
                         <div style="position:relative;height:160px;margin:-1.5rem -1.5rem 1rem;overflow:hidden;border-radius:12px 12px 0 0;">
                             <img src="../${a.image_url || 'assets/images/facade.jpg'}" alt="" style="width:100%;height:100%;object-fit:cover;">
-                            <span style="position:absolute;top:0.75rem;left:0.75rem;font-size:1.5rem;background:rgba(0,0,0,0.6);padding:0.35rem 0.6rem;border-radius:8px;">${a.icon || '✨'}</span>
                         </div>
                         <h3 class="font-heading" style="color:#fff;font-size:1.1rem;margin-bottom:0.35rem;">${a.title}</h3>
                         <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.5;margin-bottom:1rem;">${a.desc || ''}</p>
@@ -121,7 +114,6 @@
             document.getElementById('amenityModalTitle').textContent = amenity ? 'Edit Amenity' : 'Add Amenity';
             document.getElementById('amenity_id').value = amenity ? amenity.id : '';
             document.getElementById('amenity_title').value = amenity ? amenity.title : '';
-            document.getElementById('amenity_icon').value = amenity ? (amenity.icon || '') : '✨';
             document.getElementById('amenity_image').value = amenity ? (amenity.image_url || '') : 'assets/images/rooftop.jpg';
             document.getElementById('amenity_desc').value = amenity ? (amenity.desc || '') : '';
             document.getElementById('amenityModal').style.display = 'flex';
@@ -147,7 +139,6 @@
             const id = document.getElementById('amenity_id').value;
             const data = {
                 title: document.getElementById('amenity_title').value.trim(),
-                icon: document.getElementById('amenity_icon').value.trim() || '✨',
                 image_url: document.getElementById('amenity_image').value.trim() || 'assets/images/rooftop.jpg',
                 desc: document.getElementById('amenity_desc').value.trim()
             };

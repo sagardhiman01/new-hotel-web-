@@ -67,8 +67,8 @@
                         </div>
                         <div style="font-size:0.85rem;color:var(--adm-gold);margin-bottom:0.75rem;">
                             <strong>${m.subject ? `Subject: ${m.subject} • ` : ''}</strong>
-                            <span>📞 <a href="tel:${cleanPhone}" style="color:var(--adm-gold);">${m.phone || 'N/A'}</a></span> • 
-                            <span>✉️ <a href="mailto:${m.email || ''}" style="color:var(--adm-gold);">${m.email || 'N/A'}</a></span>
+                            <span>Phone: <a href="tel:${cleanPhone}" style="color:var(--adm-gold);">${m.phone || 'N/A'}</a></span> • 
+                            <span>Email: <a href="mailto:${m.email || ''}" style="color:var(--adm-gold);">${m.email || 'N/A'}</a></span>
                         </div>
                         <p style="font-size:0.9rem;color:#cbd5e1;line-height:1.6;background:rgba(0,0,0,0.25);padding:1rem;border-radius:6px;border:1px solid var(--adm-border);">
                             ${m.message || ''}
@@ -76,7 +76,7 @@
                     </div>
 
                     <div style="display:flex;flex-direction:column;gap:0.5rem;min-width:140px;">
-                        ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(m.name)},%20we%20received%20your%20inquiry%20at%20Hotel%20Varn%20Inn." target="_blank" class="btn btn-adm-gold btn-adm-sm" style="text-align:center;text-decoration:none;">WhatsApp Reply 💬</a>` : ''}
+                        ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(m.name)},%20we%20received%20your%20inquiry%20at%20Hotel%20Varn%20Inn." target="_blank" class="btn btn-adm-gold btn-adm-sm" style="text-align:center;text-decoration:none;">WhatsApp Reply</a>` : ''}
                         <button class="btn btn-adm-secondary btn-adm-sm" onclick="toggleStatus(${m.id}, '${m.status === 'unread' ? 'read' : 'unread'}')">
                             Mark as ${m.status === 'unread' ? 'Read' : 'Unread'}
                         </button>

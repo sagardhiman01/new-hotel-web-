@@ -132,7 +132,7 @@
                     </td>
                     <td>
                         <div style="display:flex;gap:0.4rem;flex-direction:column;">
-                            ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(b.guest_name)},%20regarding%20your%20reservation%20at%20Hotel%20Varn%20Inn%20(Ref:%20${b.booking_code})." target="_blank" class="btn btn-adm-gold btn-adm-sm" style="text-align:center;text-decoration:none;">WhatsApp 💬</a>` : ''}
+                            ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(b.guest_name)},%20regarding%20your%20reservation%20at%20Hotel%20Varn%20Inn%20(Ref:%20${b.booking_code})." target="_blank" class="btn btn-adm-gold btn-adm-sm" style="text-align:center;text-decoration:none;">WhatsApp</a>` : ''}
                             <button class="btn btn-adm-danger btn-adm-sm" onclick="deleteBooking(${b.id})">Delete</button>
                         </div>
                     </td>

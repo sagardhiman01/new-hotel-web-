@@ -25,7 +25,6 @@
                         <div class="kpi-value" id="kpiTotalBookings">0</div>
                         <div style="font-size:0.75rem;color:#f59e0b;margin-top:0.25rem;" id="kpiPendingBookings">0 Pending</div>
                     </div>
-                    <div class="kpi-icon-wrap" style="background:rgba(212,175,55,0.15);color:var(--adm-gold);">🛎️</div>
                 </div>
 
                 <div class="kpi-card">
@@ -34,7 +33,6 @@
                         <div class="kpi-value" id="kpiTotalRooms">0</div>
                         <div style="font-size:0.75rem;color:var(--adm-text-muted);margin-top:0.25rem;">Active Suites</div>
                     </div>
-                    <div class="kpi-icon-wrap" style="background:rgba(59,130,246,0.15);color:#3b82f6;">🛏️</div>
                 </div>
 
                 <div class="kpi-card">
@@ -43,7 +41,6 @@
                         <div class="kpi-value" id="kpiTotalDining">0</div>
                         <div style="font-size:0.75rem;color:var(--adm-text-muted);margin-top:0.25rem;">Dishes & Drinks</div>
                     </div>
-                    <div class="kpi-icon-wrap" style="background:rgba(16,185,129,0.15);color:#10b981;">🍽️</div>
                 </div>
 
                 <div class="kpi-card">
@@ -52,7 +49,6 @@
                         <div class="kpi-value" id="kpiTotalMessages">0</div>
                         <div style="font-size:0.75rem;color:#a78bfa;margin-top:0.25rem;" id="kpiUnreadMessages">0 Unread</div>
                     </div>
-                    <div class="kpi-icon-wrap" style="background:rgba(124,58,237,0.15);color:#a78bfa;">✉️</div>
                 </div>
             </div>
 
@@ -66,9 +62,9 @@
                         </p>
                     </div>
                     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-                        <a href="settings.html" class="btn btn-adm-gold btn-adm-sm">Site Settings ⚙️</a>
-                        <a href="rooms.html" class="btn btn-adm-secondary btn-adm-sm">Manage Rooms 🛏️</a>
-                        <a href="dining.html" class="btn btn-adm-secondary btn-adm-sm">Manage Dining 🍷</a>
+                        <a href="settings.html" class="btn btn-adm-gold btn-adm-sm">Site Settings</a>
+                        <a href="rooms.html" class="btn btn-adm-secondary btn-adm-sm">Manage Rooms</a>
+                        <a href="dining.html" class="btn btn-adm-secondary btn-adm-sm">Manage Dining</a>
                     </div>
                 </div>
             </div>
@@ -216,7 +212,7 @@
                             <p style="font-size:0.85rem;color:#cbd5e1;line-height:1.5;">${m.message || ''}</p>
                         </div>
                         <div style="display:flex;gap:0.5rem;align-items:center;">
-                            ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(m.name)},%20thank%20you%20for%20contacting%20Hotel%20Varn%20Inn." target="_blank" class="btn btn-adm-gold btn-adm-sm">WhatsApp Reply 💬</a>` : ''}
+                            ${cleanPhone ? `<a href="https://wa.me/${cleanPhone}?text=Hello%20${encodeURIComponent(m.name)},%20thank%20you%20for%20contacting%20Hotel%20Varn%20Inn." target="_blank" class="btn btn-adm-gold btn-adm-sm">WhatsApp Reply</a>` : ''}
                             <button class="btn btn-adm-danger btn-adm-sm" onclick="removeMsg(${m.id})">Delete</button>
                         </div>
                     `;
