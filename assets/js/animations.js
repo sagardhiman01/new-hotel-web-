@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    document.addEventListener('DOMContentLoaded', () => {
+    function initAll() {
         initScrollProgressBar();
         initBackToTopButton();
         initAutoScrollReveal();
@@ -16,7 +16,14 @@
         initButtonRipples();
         initMagneticButtons();
         initGSAPIfAvailable();
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+        // DOM already parsed and ready, run immediately
+        initAll();
+    }
 
     /* ==========================================================================
        1. LUXURY READING SCROLL PROGRESS BAR
@@ -272,16 +279,24 @@
     }
 
     /* ==========================================================================
-       6. NUMBER COUNTER ANIMATION
+       6. NUMBER COUNTER ANIMATION (SILKY SMOOTH LUXURY COUNT UP)
        ========================================================================== */
     function initAnimatedCounters() {
         const counterCandidates = document.querySelectorAll(
-            '[data-counter], .stat-number, .stat-value, .highlight-number, .stat-num'
+            '[data-counter], .stat-num, .stat-number, .stat-value, .highlight-number'
         );
 
         if (counterCandidates.length === 0) return;
 
+        counterCandidates.forEach(el => {
+            const raw = el.getAttribute('data-counter') || el.textContent.trim();
+            if (!el.getAttribute('data-counter')) {
+                el.setAttribute('data-counter', raw);
+            }
+        });
+
         const animateCounter = (el) => {
+            if (el.classList.contains('counted')) return;
             const rawText = el.getAttribute('data-counter') || el.textContent.trim();
             const match = rawText.match(/([^\d]*)([\d,.]+)([^\d]*)/);
             if (!match) return;
@@ -294,13 +309,14 @@
 
             if (isNaN(targetVal)) return;
 
+            el.classList.add('counting');
             let startTime = null;
-            const duration = 1800; // ms
+            const duration = 2000; // 2s silky count-up
 
             const step = (timestamp) => {
                 if (!startTime) startTime = timestamp;
                 const progress = Math.min((timestamp - startTime) / duration, 1);
-                // Cubic ease-out
+                // Cubic ease-out curve
                 const easeVal = 1 - Math.pow(1 - progress, 3);
                 const currentVal = targetVal * easeVal;
 
@@ -310,12 +326,18 @@
                     requestAnimationFrame(step);
                 } else {
                     el.textContent = rawText;
+                    el.classList.remove('counting');
                     el.classList.add('counted');
                 }
             };
 
             requestAnimationFrame(step);
         };
+
+        if (!('IntersectionObserver' in window)) {
+            counterCandidates.forEach(animateCounter);
+            return;
+        }
 
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -324,9 +346,17 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.1, rootMargin: '0px 0px 40px 0px' });
 
-        counterCandidates.forEach(el => counterObserver.observe(el));
+        counterCandidates.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                // Already in viewport on page load
+                animateCounter(el);
+            } else {
+                counterObserver.observe(el);
+            }
+        });
     }
 
     /* ==========================================================================
