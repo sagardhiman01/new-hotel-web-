@@ -1,8 +1,255 @@
 /* ==========================================================================
-   Hotel Varn Inn - Elite Micro-Animations & SVG Effects
+   HOTEL VARN INN BY EPSILON - ELITE LUXURY ANIMATION & MOTION SYSTEM
+   Refined Micro-Animations, Scroll Reveals, Shimmers & Interactive Dynamics
    ========================================================================== */
 
-/* SVG Animated Icons */
+/* --------------------------------------------------------------------------
+   1. GLOBAL SCROLL PROGRESS BAR
+   -------------------------------------------------------------------------- */
+#luxuryProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #e5a826, #d48f1f, #fff2d1, #b8730b);
+    background-size: 300% 100%;
+    animation: goldGradientMove 3s ease infinite;
+    z-index: 999999;
+    box-shadow: 0 0 10px rgba(229, 168, 38, 0.8), 0 0 20px rgba(212, 143, 31, 0.5);
+    pointer-events: none;
+    transition: width 0.12s cubic-bezier(0.1, 0.5, 0.1, 1);
+}
+
+@keyframes goldGradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEAL UTILITIES & STATES
+   -------------------------------------------------------------------------- */
+.reveal,
+.reveal-up,
+.reveal-down,
+.reveal-left,
+.reveal-right,
+.reveal-zoom,
+.reveal-flip {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal,
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-down {
+    transform: translateY(-40px);
+}
+
+.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal-zoom {
+    transform: scale(0.92);
+}
+
+.reveal-flip {
+    transform: perspective(1000px) rotateX(15deg) translateY(30px);
+}
+
+/* Activated Visible State */
+.reveal.is-visible,
+.reveal-up.is-visible,
+.reveal-down.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-zoom.is-visible,
+.reveal-flip.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 0.1s !important; }
+.delay-200 { transition-delay: 0.2s !important; }
+.delay-300 { transition-delay: 0.3s !important; }
+.delay-400 { transition-delay: 0.4s !important; }
+.delay-500 { transition-delay: 0.5s !important; }
+.delay-600 { transition-delay: 0.6s !important; }
+.delay-700 { transition-delay: 0.7s !important; }
+.delay-800 { transition-delay: 0.8s !important; }
+
+/* --------------------------------------------------------------------------
+   3. HERO PARALLAX & AMBIENT GLOW
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Subtle Hero Ken-Burns Pan */
+.hero-bg-media img {
+    transform: scale(1);
+    transition: transform 10s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: kenBurnsHero 24s infinite alternate ease-in-out;
+}
+
+@keyframes kenBurnsHero {
+    0% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.06) translate(-1%, -1%); }
+    100% { transform: scale(1.03) translate(1%, 0.5%); }
+}
+
+/* Hero Badge Glow & Gentle Float */
+.hero-badge,
+.section-tag {
+    position: relative;
+    display: inline-block;
+    animation: floatBadge 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-4px); }
+}
+
+/* --------------------------------------------------------------------------
+   4. LUXURY GOLD SHIMMER & GLEAMS
+   -------------------------------------------------------------------------- */
+.shimmer-badge,
+.badge-gold,
+.btn-gold {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-badge::after,
+.btn-gold::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 220%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 65%
+    );
+    transform: rotate(25deg);
+    animation: shimmerSweep 4.5s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes shimmerSweep {
+    0%, 20% { transform: translateX(-120%) rotate(25deg); }
+    50%, 100% { transform: translateX(120%) rotate(25deg); }
+}
+
+/* Text Shimmer Effect */
+.text-gold-gradient {
+    background: linear-gradient(135deg, #e5a826 0%, #d48f1f 45%, #fff2d1 70%, #b8730b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmerMove 6s linear infinite;
+}
+
+@keyframes textShimmerMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --------------------------------------------------------------------------
+   5. CARD HOVER, 3D TILT & LIGHTING SPECULAR HIGHLIGHT
+   -------------------------------------------------------------------------- */
+.room-card,
+.facility-card,
+.amenity-card,
+.gallery-item,
+.editorial-image-frame {
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.45s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-card:hover,
+.facility-card:hover,
+.amenity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(24, 28, 36, 0.14),
+                0 0 25px rgba(212, 143, 31, 0.22);
+    border-color: var(--gold-border-bright) !important;
+}
+
+/* Card Image Inner Zoom */
+.room-card .room-media,
+.facility-card .facility-media,
+.gallery-item .gallery-thumb,
+.editorial-image-frame {
+    overflow: hidden;
+}
+
+.room-card img,
+.facility-card img,
+.gallery-item img,
+.editorial-image-frame img {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+    will-change: transform;
+}
+
+.room-card:hover img,
+.facility-card:hover img,
+.gallery-item:hover img,
+.editorial-image-frame:hover img {
+    transform: scale(1.07);
+    filter: brightness(1.04) contrast(1.02);
+}
+
+/* Specular Light Sheen overlay for tilted cards */
+.tilt-glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+    opacity: 0;
+    mix-blend-mode: overlay;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   6. SVG MICRO-ANIMATIONS & ICONS
+   -------------------------------------------------------------------------- */
 .anim-icon {
     width: 28px;
     height: 28px;
@@ -14,38 +261,19 @@
 .anim-icon:hover,
 *:hover > .anim-icon {
     transform: scale(1.15) translateY(-2px);
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    filter: drop-shadow(0 0 8px rgba(212, 143, 31, 0.65));
 }
 
-/* Icon Stroke Animations */
-.icon-line {
-    stroke-dasharray: 60;
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 0.8s ease;
-}
-
-*:hover > .anim-icon .icon-line {
-    animation: strokeDraw 1.2s ease forwards;
-}
-
-@keyframes strokeDraw {
-    0% { stroke-dashoffset: 60; opacity: 0.4; }
-    50% { stroke-dashoffset: 0; opacity: 1; }
-    100% { stroke-dashoffset: 0; opacity: 1; }
-}
-
-/* Pulse Animation */
 .icon-pulse {
     animation: iconPulse 2.4s infinite ease-in-out;
     transform-origin: center;
 }
 
 @keyframes iconPulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.35); opacity: 1; fill: var(--gold); }
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.22); opacity: 1; fill: var(--gold); }
 }
 
-/* Wave Sway Animation for Pool & Wi-Fi */
 .icon-wave {
     animation: waveSway 3s ease-in-out infinite alternate;
     transform-origin: center;
@@ -57,23 +285,21 @@
 }
 
 @keyframes waveSway {
-    0% { transform: translateX(-1px) translateY(0.5px); }
-    100% { transform: translateX(1px) translateY(-0.5px); }
+    0% { transform: translateX(-1.5px) translateY(1px); }
+    100% { transform: translateX(1.5px) translateY(-1px); }
 }
 
-/* Sparkle Twinkle Animation */
 .icon-sparkle {
     animation: sparkleTwinkle 2s ease-in-out infinite alternate;
 }
 
 @keyframes sparkleTwinkle {
-    0% { opacity: 0.3; transform: scale(0.85); }
-    100% { opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 4px var(--gold)); }
+    0% { opacity: 0.35; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 5px var(--gold)); }
 }
 
-/* Spin Animation */
 .icon-spin {
-    animation: iconRotate 8s linear infinite;
+    animation: iconRotate 9s linear infinite;
     transform-origin: center;
 }
 
@@ -81,67 +307,154 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Luxury Shimmer Effect */
-.shimmer-badge {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(42, 14, 63, 0.4));
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+/* --------------------------------------------------------------------------
+   7. FLOATING WHATSAPP RADAR RIPPLE
+   -------------------------------------------------------------------------- */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
 }
 
-.shimmer-badge::after {
+.floating-whatsapp::before,
+.floating-whatsapp::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(60deg, transparent 30%, rgba(255, 255, 255, 0.25) 50%, transparent 70%);
-    transform: rotate(25deg);
-    animation: shimmerSlide 3.5s infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.4);
+    z-index: -1;
+    animation: waRadarRipple 2.6s ease-out infinite;
+    pointer-events: none;
 }
 
-@keyframes shimmerSlide {
-    0% { transform: translateX(-100%) rotate(25deg); }
-    100% { transform: translateX(100%) rotate(25deg); }
+.floating-whatsapp::after {
+    animation-delay: 1.3s;
 }
 
-/* Glow Pulses */
-.glow-gold {
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
-    transition: box-shadow 0.4s ease;
+@keyframes waRadarRipple {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.85);
+        opacity: 0;
+    }
 }
 
-.glow-gold:hover {
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.65), 0 0 15px rgba(255, 255, 255, 0.2);
+.floating-whatsapp:hover {
+    transform: scale(1.12) translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
 }
 
-.glow-purple {
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+/* --------------------------------------------------------------------------
+   8. BACK-TO-TOP BUTTON
+   -------------------------------------------------------------------------- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--gold-border);
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 998;
+    box-shadow: var(--shadow-luxury);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Floating Elements */
-.float-element {
-    animation: floatingObj 4s ease-in-out infinite alternate;
+.back-to-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-@keyframes floatingObj {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-10px); }
+.back-to-top-btn:hover {
+    background: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(212, 143, 31, 0.45);
 }
 
-/* Curtain Reveal Animation */
-.curtain-reveal {
-    animation: curtainOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+.back-to-top-btn svg {
+    transition: transform 0.3s ease;
 }
 
-@keyframes curtainOpen {
-    0% { clip-path: inset(0 100% 0 0); }
-    100% { clip-path: inset(0 0 0 0); }
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
 }
 
-/* Custom Interactive Luxury Cursor */
+/* --------------------------------------------------------------------------
+   9. LUXURY MAGNETIC & RIPPLE BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    transform: scale(0);
+    animation: rippleWave 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleWave {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. NUMBER COUNTER ANIMATION HIGHLIGHT
+   -------------------------------------------------------------------------- */
+.stat-counter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.stat-counter.counted {
+    animation: counterPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes counterPop {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   11. LUXURY CUSTOM CURSOR
+   -------------------------------------------------------------------------- */
 .custom-cursor {
     position: fixed;
     top: 0;
@@ -160,21 +473,72 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 38px;
-    height: 38px;
-    border: 1.5px solid rgba(212, 175, 55, 0.6);
-    background: rgba(212, 175, 55, 0.04);
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(212, 143, 31, 0.7);
+    background: rgba(212, 143, 31, 0.04);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99998;
     transform: translate(-50%, -50%);
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.3s ease,
+                border-color 0.3s ease;
 }
 
 .cursor-hover .cursor-follower {
-    width: 55px;
-    height: 55px;
-    background: rgba(212, 175, 55, 0.18);
-    border-color: var(--gold);
+    width: 58px;
+    height: 58px;
+    background: rgba(212, 143, 31, 0.18);
+    border-color: var(--gold-bright);
     backdrop-filter: blur(2px);
+}
+
+/* --------------------------------------------------------------------------
+   12. NAVIGATION HOVER & UNDERLINE EFFECTS
+   -------------------------------------------------------------------------- */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: var(--gold-gradient);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    left: 0%;
+}
+
+/* Header Glassmorphism on Scroll */
+.main-header.scrolled {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(24, 28, 36, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   13. REDUCED MOTION PREFERENCES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .custom-cursor, .cursor-follower {
+        display: none !important;
+    }
 }

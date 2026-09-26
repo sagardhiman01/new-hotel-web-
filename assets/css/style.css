@@ -3,10 +3,10 @@
    Inspired by Aman, Taj, Oberoi & The Real Hotel Varn Inn Architectural Façade
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@200;300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    /* 🏛️ Warm Alabaster White & Pearl Ivory Façade Palette (Matching Real Hotel) */
+    /* 🏛️ Warm Alabaster White & Pearl Ivory Façade Palette (Matching Real Hotel & Sunny Sanitations Standard) */
     --bg-base: #fbf9f4;                 /* Warm Alabaster White (Building Façade) */
     --bg-surface: #ffffff;              /* Pure Crisp White */
     --bg-surface-elevated: #f5efe4;     /* Pearl Cream / Warm Stone */
@@ -15,34 +15,40 @@
     --bg-card-hover: #ffffff;
     --bg-glass: rgba(251, 249, 244, 0.92);
     
-    /* ✨ Hotel Varn Inn Radiant 3D Signage Gold (Warm 3000K Amber Illumination) */
-    --gold: #d48f1f;                    /* Radiant Architectural Gold */
-    --gold-bright: #e5a826;             /* Glowing Sunlit Gold */
-    --gold-light: #fff2d1;              /* Soft Champagne Tint */
-    --gold-radiant: #fff9e8;
-    --gold-dark: #a66a0e;
-    --gold-gradient: linear-gradient(135deg, #e5a826 0%, #d48f1f 50%, #b8730b 100%);
-    --gold-gradient-soft: linear-gradient(135deg, rgba(229, 168, 38, 0.12) 0%, rgba(212, 143, 31, 0.04) 100%);
-    --gold-border: rgba(212, 143, 31, 0.28);
-    --gold-border-bright: rgba(212, 143, 31, 0.65);
-    --gold-glow: rgba(212, 143, 31, 0.35);
-    --gold-sign-glow: 0 0 10px rgba(229, 168, 38, 0.5), 0 0 24px rgba(212, 143, 31, 0.3);
+    /* ✨ Sunny Sanitations & Architectural Brass Gold Palette */
+    --brass: #C8A46B;
+    --brass-light: #F5E6CC;
+    --brass-mid: #E1C298;
+    --brass-dark: #B89B74;
+    --brass-gradient: linear-gradient(135deg, #F5E6CC 0%, #E1C298 45%, #C8A46B 75%, #B89B74 100%);
+    --gold: #C8A46B;
+    --gold-bright: #E1C298;
+    --gold-light: #fbf5ea;
+    --gold-radiant: #fffdf8;
+    --gold-dark: #9e7b42;
+    --gold-gradient: linear-gradient(135deg, #F5E6CC 0%, #E1C298 45%, #C8A46B 75%, #B89B74 100%);
+    --gold-gradient-soft: linear-gradient(135deg, rgba(200, 164, 107, 0.12) 0%, rgba(200, 164, 107, 0.03) 100%);
+    --gold-border: rgba(200, 164, 107, 0.28);
+    --gold-border-bright: rgba(200, 164, 107, 0.65);
+    --gold-glow: rgba(200, 164, 107, 0.35);
+    --gold-sign-glow: 0 0 10px rgba(225, 194, 152, 0.5), 0 0 24px rgba(200, 164, 107, 0.3);
 
-    /* 🖤 High-Contrast Editorial Typography (Matching Hotel Metal Balustrades) */
-    --text-primary: #181c24;            /* Deep Obsidian Charcoal */
-    --text-secondary: #4f5768;          /* Refined Slate Charcoal */
-    --text-muted: #7e879a;              /* Soft Neutral Slate */
-    --text-dim: #a4adbd;
-    --text-gold: #b87814;               /* High-contrast readable gold */
+    /* 🖤 High-Contrast Editorial Typography (Matching Sunny Sanitations Obsidian & Slate) */
+    --text-primary: #11141a;            /* Deep Obsidian Charcoal */
+    --text-secondary: #4a5260;          /* Refined Slate Charcoal */
+    --text-muted: #798394;              /* Soft Neutral Slate */
+    --text-dim: #a0a9b8;
+    --text-gold: #b8863b;               /* High-contrast readable brass gold */
 
     /* Borders & Dividers */
     --border-subtle: rgba(24, 28, 36, 0.08);
-    --border-gold-subtle: rgba(212, 143, 31, 0.2);
+    --border-gold-subtle: rgba(200, 164, 107, 0.22);
 
-    /* Typography Families (Exact to Hotel Façade) */
-    --font-heading: 'Cinzel', serif;
-    --font-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* ✒️ Typography Families (Exact to Sunny Sanitations Standard) */
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
     /* Transitions & Shadows */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -50,8 +56,8 @@
     --transition-luxury: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
     --shadow-subtle: 0 4px 20px rgba(24, 28, 36, 0.06);
-    --shadow-luxury: 0 15px 35px -5px rgba(24, 28, 36, 0.09), 0 0 20px rgba(212, 143, 31, 0.08);
-    --shadow-gold-glow: 0 0 25px rgba(212, 143, 31, 0.35);
+    --shadow-luxury: 0 15px 35px -5px rgba(24, 28, 36, 0.09), 0 0 20px rgba(200, 164, 107, 0.1);
+    --shadow-gold-glow: 0 0 25px rgba(200, 164, 107, 0.35);
 }
 
 /* Reset & Global Standards */
@@ -151,8 +157,25 @@ a {
 }
 
 /* ==========================================================================
-   TYPOGRAPHY SYSTEM (REFINED & UNDERSTATED LUXURY)
+   TYPOGRAPHY SYSTEM (EXACT SUNNY SANITATIONS ARCHITECTURAL STANDARD)
    ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 300; /* Sunny Sanitations signature light luxury serif */
+    letter-spacing: 0.035em;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+p {
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+}
 
 .font-serif {
     font-family: var(--font-serif);
@@ -160,12 +183,21 @@ a {
 
 .font-heading {
     font-family: var(--font-heading);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.035em;
+}
+
+.font-sans {
+    font-family: var(--font-sans);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
 }
 
 .font-italic {
     font-style: italic;
     font-family: var(--font-serif);
+    font-weight: 300;
 }
 
 .text-gold {
@@ -173,7 +205,7 @@ a {
 }
 
 .text-gold-gradient {
-    background: var(--gold-gradient);
+    background: var(--brass-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -181,20 +213,21 @@ a {
 .section-tag {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.65rem;
-    font-weight: 700;
+    gap: 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.32em;
     color: var(--gold);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.75rem;
 }
 
 .section-tag::before,
 .section-tag::after {
     content: '';
     display: inline-block;
-    width: 22px;
+    width: 24px;
     height: 1px;
     background: var(--gold);
     opacity: 0.65;
@@ -202,21 +235,30 @@ a {
 
 .section-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.6rem, 3vw, 2.35rem);
-    font-weight: 600;
-    line-height: 1.22;
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 300;
+    line-height: 1.12;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.01em;
+    margin-bottom: 0.85rem;
+    letter-spacing: 0.035em;
 }
 
 .section-subtitle {
-    font-size: 0.92rem;
+    font-family: var(--font-sans);
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-weight: 300;
     color: var(--text-secondary);
-    max-width: 620px;
-    line-height: 1.68;
-    margin: 0 auto 2.25rem;
-    font-weight: 400;
+    max-width: 660px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    margin: 0 auto 2.5rem;
+}
+
+.gold-divider-line {
+    width: 70px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.25rem auto;
 }
 
 /* ==========================================================================
@@ -340,12 +382,13 @@ a {
 }
 
 .brand-name {
-    font-family: 'Cinzel', serif;
-    font-size: 1.24rem;
-    font-weight: 700;
-    color: #181c24;
-    letter-spacing: 0.16em;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: 0.2em;
     line-height: 1.1;
+    text-transform: uppercase;
     transition: color var(--transition-fast);
 }
 
@@ -354,28 +397,30 @@ a {
 }
 
 .brand-byline {
-    font-family: var(--font-sans);
-    font-size: 0.62rem;
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
     color: var(--gold);
-    letter-spacing: 0.36em;
+    letter-spacing: 0.38em;
     text-transform: uppercase;
-    margin-top: 0.18rem;
+    margin-top: 0.22rem;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.75rem;
 }
 
 .nav-link {
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
     color: var(--text-secondary);
     position: relative;
     padding: 0.35rem 0;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
     transition: color var(--transition-fast);
     white-space: nowrap;
 }
@@ -485,16 +530,17 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1.4rem;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    gap: 0.65rem;
+    padding: 0.75rem 1.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.70rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
     transition: all var(--transition-smooth);
-    border: none;
+    border: 1px solid transparent;
     outline: none;
     position: relative;
     overflow: hidden;
@@ -502,34 +548,39 @@ a {
 }
 
 .btn-gold {
-    background: var(--gold-gradient);
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(212, 143, 31, 0.35);
+    background: var(--brass);
+    border-color: var(--brass);
+    color: #11141a;
+    box-shadow: 0 4px 18px rgba(200, 164, 107, 0.35);
 }
 
 .btn-gold:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #11141a;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(212, 143, 31, 0.5);
-    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(200, 164, 107, 0.5);
 }
 
 .btn-outline-gold {
-    background: #ffffff;
-    border: 1px solid var(--gold-border-bright);
-    color: var(--gold-dark);
+    background: transparent;
+    border: 1px solid rgba(200, 164, 107, 0.5);
+    color: var(--text-primary);
+    backdrop-blur: 4px;
 }
 
 .btn-outline-gold:hover {
-    background: var(--gold-light);
-    border-color: var(--gold);
+    background: rgba(200, 164, 107, 0.12);
+    border-color: var(--brass);
     color: var(--gold-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(212, 143, 31, 0.2);
+    box-shadow: 0 4px 15px rgba(200, 164, 107, 0.2);
 }
 
 .btn-sm {
-    padding: 0.48rem 1.1rem;
-    font-size: 0.72rem;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
 }
 
 /* ==========================================================================
@@ -593,39 +644,43 @@ a {
 .hero-badge-crown {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid var(--gold-border-bright);
-    padding: 0.38rem 1.1rem;
-    border-radius: 50px;
-    font-size: 0.68rem;
-    color: #fff2d1;
-    letter-spacing: 0.2em;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(200, 164, 107, 0.4);
+    padding: 0.45rem 1.25rem;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--brass-light);
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.9rem, 4vw, 3.2rem);
-    font-weight: 600;
-    line-height: 1.14;
+    font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+    font-weight: 300;
+    line-height: 1.04;
     color: #ffffff;
-    margin-bottom: 1rem;
-    letter-spacing: -0.01em;
-    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.04em;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.75);
 }
 
 .hero-subtitle {
-    font-size: clamp(0.88rem, 1.3vw, 1.02rem);
-    color: #f1f3f8;
-    max-width: 640px;
-    margin: 0 auto 2rem;
-    line-height: 1.65;
-    font-weight: 400;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    font-family: var(--font-sans);
+    font-size: clamp(0.92rem, 1.25vw, 1.05rem);
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 680px;
+    margin: 0 auto 2.25rem;
+    line-height: 1.82;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 /* THE ARCHITECTURAL BOOKING BAR */
@@ -743,19 +798,22 @@ a {
 
 .editorial-content h2 {
     font-family: var(--font-serif);
-    font-size: clamp(1.65rem, 3vw, 2.35rem);
-    font-weight: 600;
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 300;
     color: var(--text-primary);
-    line-height: 1.22;
-    margin-bottom: 1.15rem;
+    line-height: 1.14;
+    letter-spacing: 0.035em;
+    margin-bottom: 1.25rem;
 }
 
 .editorial-content p {
-    font-size: 0.92rem;
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
     color: var(--text-secondary);
-    line-height: 1.75;
+    line-height: 1.82;
+    letter-spacing: 0.02em;
     margin-bottom: 1.35rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* Key Stats Strip */
@@ -763,7 +821,7 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
-    padding: 2.25rem 0;
+    padding: 2.5rem 0;
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
     margin: 3.5rem 0 0;
@@ -772,19 +830,21 @@ a {
 
 .stat-num {
     font-family: var(--font-serif);
-    font-size: 2.3rem;
-    font-weight: 700;
-    color: var(--gold-dark);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--gold);
     line-height: 1;
-    margin-bottom: 0.25rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
 }
 
 .stat-desc {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 /* ==========================================================================
@@ -844,12 +904,13 @@ a {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--gold-border-bright);
     color: var(--gold-dark);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     padding: 0.35rem 0.85rem;
-    border-radius: 4px;
+    border-radius: 2px;
     z-index: 2;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -862,30 +923,35 @@ a {
 }
 
 .suite-class-eyebrow {
-    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.32em;
     color: var(--gold);
-    margin-bottom: 0.4rem;
-    font-weight: 700;
+    margin-bottom: 0.45rem;
+    font-weight: 500;
 }
 
 .suite-title {
     font-family: var(--font-serif);
-    font-size: 1.65rem;
-    font-weight: 600;
+    font-size: 1.85rem;
+    font-weight: 300;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
 }
 
 .suite-specs-row {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     padding: 0.65rem 0;
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
@@ -893,11 +959,13 @@ a {
 }
 
 .suite-desc {
+    font-family: var(--font-sans);
     color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.65;
+    font-size: 0.92rem;
+    line-height: 1.8;
     margin-bottom: 1.25rem;
-    font-weight: 400;
+    font-weight: 300;
+    letter-spacing: 0.02em;
 }
 
 .amenity-pill {
@@ -905,8 +973,9 @@ a {
     padding: 0.28rem 0.75rem;
     border: 1px solid var(--border-gold-subtle);
     border-radius: 50px;
+    font-family: var(--font-sans);
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-secondary);
     background: var(--gold-light);
     margin: 0 0.3rem 0.4rem 0;
@@ -924,13 +993,15 @@ a {
 
 .suite-rate-num {
     font-family: var(--font-serif);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--gold-dark);
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--gold);
     line-height: 1;
+    letter-spacing: 0.03em;
 }
 
 .suite-rate-period {
+    font-family: var(--font-sans);
     font-size: 0.72rem;
     color: var(--text-muted);
 }
@@ -984,20 +1055,22 @@ a {
 }
 
 .experience-tag {
-    color: #ffd466;
-    font-size: 0.65rem;
-    font-weight: 700;
+    color: var(--brass-light);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.28em;
     margin-bottom: 0.35rem;
 }
 
 .experience-title {
     font-family: var(--font-serif);
-    font-size: 1.45rem;
-    font-weight: 600;
+    font-size: 1.55rem;
+    font-weight: 300;
     color: #ffffff;
-    line-height: 1.22;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
     margin-bottom: 0.5rem;
 }
 
