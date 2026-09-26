@@ -1,0 +1,19 @@
+{
+  "name": "hotel-varn-inn-web",
+  "version": "1.0.0",
+  "description": "Hotel Varn Inn By Epsilon - 5-Star Luxury Architectural Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "hotel",
+    "luxury",
+    "hospitality",
+    "varn-inn",
+    "epsilon"
+  ],
+  "author": "Hotel Varn Inn By Epsilon",
+  "license": "ISC"
+}
